@@ -1,0 +1,86 @@
+<section data-fls-section class="section" id='example-full'
+	data-change-background data-background-color="--white, #ffffff"
+	data-background-img="@img/bg/map.png">
+
+	<div class="section__container">
+
+		<div class="section-head">
+			<div class="section-head__title">
+				<h2>Как выглядят праздники <br> <span>в Ивентово</span></h2>
+			</div>
+			<div class="section-head__subtitle">
+				<p>Подзаголовок</p>
+			</div>
+		</div>
+
+		<div class="section-content">
+			<!-- content -->
+			<div data-fls-example
+				class="example example_full example_boyard">
+
+				<div class="example__content">
+
+					<div class="example-slider" data-slider-parent>
+						<div class="decor decor_coin">
+							<img src="@img/icons/coin.png" alt="Image">
+						</div>
+
+						<div class="decor decor_key">
+							<img src="@img/icons/key3.png" alt="Image">
+						</div>
+						<!-- If we need navigation buttons -->
+						<div class="slider-block__prev swiper-button-prev">
+							<svg>
+								<use xlink:href="__spritemap#sprite-arrow"></use>
+							</svg>
+
+							<div class="slider-block__button-text">
+								Предыдущая сторис
+							</div>
+						</div>
+
+						<div class="slider-block__next swiper-button-next">
+							<svg>
+								<use xlink:href="__spritemap#sprite-arrow"></use>
+							</svg>
+							<div class="slider-block__button-text">
+								Следующая сторис
+							</div>
+						</div>
+
+						<include src="@components/layout/slider/example.html">
+						</include>
+					</div>
+
+					<div data-fls-people class="people">
+
+						<div data-fls-bubble class="bubble">
+
+							<div class="bubble__tail">
+								<svg class="" width="98" height="21"
+									viewBox="0 0 98 21" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M96.6226 19.6853L41.0836 13.5723L1.36544 0.342889L41.9326 0.534396L96.6226 19.6853Z"
+										fill="white" stroke="black" stroke-width="1" />
+								</svg>
+							</div>
+
+							<div class="bubble__text">
+								<p>Основа праздников – <br> 3 популярных истории: <br>
+									Форт
+									Боярд, Гарри <br> Поттер и Джуманджи</p>
+							</div>
+						</div>
+
+						<div class="people__img">
+							<img src="@img/people/peopleHiTimer.png" alt="Image">
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>

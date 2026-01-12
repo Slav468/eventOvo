@@ -1,0 +1,232 @@
+// Підключення CSS-змінних
+// -------------------------------------------
+@use 'includes/variables.css';
+
+// Подключение анимации
+// --------------------------------------------
+
+@use 'includes/keyframes';
+
+// ---------------------------------------------
+// Підключення загальних віддалених шрифтів (Google Fonts)
+// --------------------------------------------
+
+// --------------------------------------------
+// Стилі тега BODY
+// ----------------------------------------------
+
+html {
+	@include adaptiveValue('font-size', 16, 12, 0, 1920, 1280);
+
+	@media (width < #{$tablet}px) {
+		font-size: 1rem;
+	}
+}
+
+body {
+	min-width: #{$minWidth}px;
+	font-family: $fontFamily;
+	color: $mainColor;
+	background-color: color-mix(
+		in srgb,
+		$mainColor 35%,
+		var(--white, #ffffff) 65%
+	);
+
+	// Скролл заблоковано
+	[data-fls-scrolllock] & {
+		overflow: hidden;
+		touch-action: none;
+		overscroll-behavior: none;
+	}
+
+	// Сайт завантажений
+	[data-fls-loaded] & {
+	}
+}
+
+// -------------------------------------------
+// Оболонка WRAPPER
+// --------------------------------------------
+
+.wrapper {
+	overflow: clip;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+
+	// Притискаємо footer
+	> main {
+		flex: 1 1 auto;
+	}
+
+	> * {
+		min-width: 0;
+	}
+}
+
+// ---------------------------------------------
+// Обмежуючий контейнер
+// -----------------------------------------------
+
+@if $responsiveType == 1 {
+	// Чуйна
+	[class*='__container'] {
+		width: 100%;
+
+		@if $maxWidthContainer > 0 {
+			flex-grow: 1;
+			max-width: #{$maxWidthContainer}px;
+		}
+
+		@media (width <= #{$pc + $containerPadding}px) {
+			@if $containerPadding > 0 {
+				@if $maxWidthContainer > 0 {
+					padding-left: #{math.div($containerPadding, 2)}px;
+					padding-right: #{math.div($containerPadding, 2)}px;
+				} @else {
+					@include adaptiveValue(
+						'padding-left',
+						math.div($containerPadding, 2),
+						15
+					);
+					@include adaptiveValue(
+						'padding-right',
+						math.div($containerPadding, 2),
+						15
+					);
+				}
+			}
+		}
+	}
+} @else {
+	[class*='__container'] {
+		@if $maxWidthContainer > 0 {
+			max-width: #{$maxWidthContainer}px;
+		} @else {
+			@if $containerPadding > 0 {
+				padding-left: #{math.div($containerPadding, 2)}px;
+				padding-right: #{math.div($containerPadding, 2)}px;
+			}
+		}
+
+		@media (max-width: to-em($pc)) {
+			max-width: 970px;
+		}
+
+		@media (max-width: to-em($tablet)) {
+			max-width: 750px;
+		}
+
+		@media (max-width: to-em($mobile)) {
+			max-width: none;
+
+			@if $containerPadding > 0 and $maxWidthContainer > 0 {
+				padding-left: #{math.div($containerPadding, 2)}px;
+				padding-right: #{math.div($containerPadding, 2)}px;
+			}
+		}
+	}
+}
+
+// ---------------------------------
+// Загальні стилі для усього сайту
+// ---------------------------------
+
+.br {
+	&_mob {
+		@media (width <= 1250px) {
+			display: none;
+		}
+	}
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--white, #ffffff);
+
+	@include adaptiveValue('padding-block-start', 24, 14);
+	@include adaptiveValue('padding-block-end', 150, 80);
+	@include adaptiveValue('gap', 150, 80);
+}
+
+.page_fails {
+	padding-block: 24px;
+}
+
+ul.list-decor {
+	@include adaptiveValue('font-size', 20, 16);
+
+	// padding-inline-start: 27px;
+	list-style-position: inside;
+	cursor: default;
+
+	& .list-decor {
+		&__icon {
+			flex-shrink: 0;
+			display: flex;
+			width: 24px;
+			height: 24px;
+
+			& svg {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	& li {
+		position: relative;
+		display: inline-flex;
+		gap: 12px;
+		font-weight: 600;
+		color: var(--white, #ffffff);
+	}
+}
+
+.decor {
+	pointer-events: none;
+
+	& img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+}
+
+.icon {
+	aspect-ratio: 1;
+
+	@include adaptiveValue('width', 95, 60);
+}
+
+#example {
+	& .section {
+		@include adaptiveValue('padding-block', 40, 10);
+
+		&__container {
+			@include adaptiveValue('gap', 140, 50);
+		}
+	}
+}
+
+#faq {
+	overflow: visible;
+}
+
+#adt {
+	overflow: visible;
+}
+
+#survey {
+	overflow: visible;
+}
+
+#moments {
+	background-size: contain;
+
+	@media (width < #{$mobile}px) {
+		background-size: cover;
+	}
+}

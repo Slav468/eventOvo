@@ -1,0 +1,67 @@
+// <BUTTONS (a.btn+tab)>
+// Сніппет (HTML): btn
+.button {
+	z-index: 1;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	font-weight: 600;
+	color: var(--white, #ffffff);
+	background-color: var(--darkblue, #4f3ccd);
+	border-radius: 100px;
+	transition: scale 0.3s ease 0s, background-color 0.3s ease 0s,
+		color 0.3s ease 0s;
+
+	@include adaptiveValue('padding-inline', 64, 24);
+	@include adaptiveValue('padding-block', 20, 16);
+	@include adaptiveValue('font-size', 24, 16);
+
+	&-icon {
+		overflow: hidden;
+
+		@include adaptiveValue('width', 80, 50);
+
+		display: flex;
+		background-color: var(--white, #ffffff);
+		border-radius: 8px;
+		transition: scale 0.3s ease 0s;
+
+		@include adaptiveValue('height', 80, 50);
+
+		html:not([data-fls-touch]) & {
+			@media (any-hover: hover), (pointer: fine) {
+				&:hover {
+					scale: 0.95;
+				}
+			}
+		}
+	}
+
+	html:not([data-fls-touch]) & {
+		@media (any-hover: hover), (pointer: fine) {
+			&:hover {
+				color: var(--white, #ffffff);
+				background-color: var(--darkblue, #4f3ccd);
+				scale: 0.98;
+			}
+		}
+	}
+
+	&_width {
+		width: 100%;
+	}
+
+	&_white {
+		color: var(--black, #1b1c1e);
+		background-color: var(--white, #ffffff);
+	}
+
+	&_pink {
+		background-color: var(--pink, #e9408f);
+	}
+
+	&_black {
+		background-color: var(--black, #1b1c1e);
+	}
+}

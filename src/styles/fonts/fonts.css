@@ -1,0 +1,8 @@
+@font-face {font-family: OpenSans;font-display: swap;src: url("@fonts/OpenSans-SemiBold.woff2") format("woff2");font-weight: 600;font-style: normal;}
+@font-face {font-family: OpenSans;font-display: swap;src: url("@fonts/OpenSans-Regular.woff2") format("woff2");font-weight: 400;font-style: normal;}
+@font-face {font-family: OpenSans;font-display: swap;src: url("@fonts/OpenSans-Bold.woff2") format("woff2");font-weight: 700;font-style: normal;}
+@font-face {font-family: Nunito;font-display: swap;src: url("@fonts/Nunito-SemiBold.woff2") format("woff2");font-weight: 600;font-style: normal;}
+@font-face {font-family: Nunito;font-display: swap;src: url("@fonts/Nunito-ExtraBold.woff2") format("woff2");font-weight: 800;font-style: normal;}
+@font-face {font-family: Nunito;font-display: swap;src: url("@fonts/Nunito-Bold.woff2") format("woff2");font-weight: 700;font-style: normal;}
+@font-face {font-family: Nunito;font-display: swap;src: url("@fonts/Nunito-Black.woff2") format("woff2");font-weight: 900;font-style: normal;}
+@font-face {font-family: Inter;font-display: swap;src: url("@fonts/Inter-Regular.woff2") format("woff2");font-weight: 400;font-style: normal;}

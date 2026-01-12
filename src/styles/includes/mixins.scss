@@ -1,0 +1,187 @@
+@use 'sass:math';
+@use '@styles/settings';
+
+// Percent
+@function percent($px, $from: 100) {
+	$result: math.div($px, $from) * 100%;
+
+	@return $result;
+}
+
+// REM
+@function to-rem($px, $current: 16) {
+	$result: math.div($px, $current) + rem;
+
+	@return $result;
+}
+
+// EM
+@function to-em($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+
+	@return $result;
+}
+
+// Currency
+@mixin currency($sym) {
+	&::after {
+		content: '#{$sym}';
+	}
+}
+
+// Трикутник
+@mixin triangle($direction, $color, $size, $size2: $size) {
+	@if $direction == left {
+		border: #{$size2}px solid transparent;
+		border-right: #{$size}px solid $color;
+	}
+
+	@if $direction == right {
+		border: #{$size2}px solid transparent;
+		border-left: #{$size}px solid $color;
+	}
+
+	@if $direction == top {
+		border: #{$size2}px solid transparent;
+		border-bottom: #{$size}px solid $color;
+	}
+
+	@if $direction == bottom {
+		border: #{$size2}px solid transparent;
+		border-top: #{$size}px solid $color;
+	}
+}
+
+// Grids
+@mixin gridCards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
+	display: grid;
+	grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+	gap: $gap;
+}
+
+// Адаптивна властивість (clamp)
+@mixin adaptiveValue(
+	$property,
+	$startSize,
+	$minSize: settings.$minSize,
+	$keepSize: 0,
+	$widthFrom: settings.$containerWidth,
+	$widthTo: settings.$minWidth
+) {
+	// Брейк-поїнти в EM
+	$widthFromMedia: to-em($widthFrom);
+	$widthToMedia: to-em($widthTo);
+
+	// Формула плаваючого значення
+	// Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+	$slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+	$yIntersection: -$widthTo * $slope + $minSize;
+	$flyValue: #{$yIntersection}px ' + ' #{$slope * 100}vw;
+
+	// Отримання значення властивості
+	$propertyValue: #{'clamp(' #{$minSize}px ',' $flyValue ',' #{$startSize}px ')'};
+
+	@if $startSize == 0 {
+		$startSize: 0.0001;
+	}
+
+	@if $minSize == 0 {
+		$minSize: 0.0001;
+	}
+
+	@if (
+		$widthFrom == settings.$containerWidth and settings.$maxWidthContainer == 0
+	) {
+		$widthFrom: settings.$maxWidth;
+	}
+
+	@if $yIntersection == 0 {
+		$yIntersection: 0.0001;
+	}
+
+	// Якщо негативні значення
+	@if $minSize > $startSize {
+		$propertyValue: #{'clamp('
+			#{$startSize}px
+			','
+			$flyValue
+			','
+			#{$minSize}px
+			')'};
+	}
+
+	// Встановлюємо значення за замовчуванням
+	@if $keepSize != 1 and $keepSize != 3 {
+		@media (width > $widthFromMedia) {
+			#{$property}: #{$startSize}px;
+		}
+	}
+
+	@if $keepSize != 1 and $keepSize != 2 {
+		@media (width <= $widthToMedia) {
+			#{$property}: #{$minSize}px;
+		}
+	}
+
+	// Адаптуємо розмір у проміжку між зазначеними ширинами в'юпорту
+	@media (width > $widthToMedia) and (width <= $widthFromMedia) {
+		#{$property}: $propertyValue;
+	}
+}
+
+// Grid-контейнер
+@mixin gridContainer(
+	$type: 0,
+	$container: settings.$maxWidthContainer,
+	$paddingStart: math.div(settings.$containerPadding, 2),
+	$paddingEnd: math.div(settings.$containerPadding, 2)
+) {
+	display: grid;
+	grid-template-columns: #{$paddingStart}px 1fr minmax(auto, #{$container}px) 1fr #{$paddingEnd}px;
+	min-width: 0;
+
+	> * {
+		min-width: 0;
+
+		@if $type == 1 {
+			grid-column: 1 / 6;
+		} @else if $type == 2 {
+			grid-column: 2 / 5;
+		} @else if $type == 3 {
+			grid-column: 3 / 6;
+		} @else if $type == 4 {
+			grid-column: 1 / 4;
+		} @else if $type == 5 {
+			grid-column: 2 / 4;
+		} @else if $type == 6 {
+			grid-column: 3 / 5;
+		} @else {
+			grid-column: 3 / 4;
+		}
+	}
+}
+
+@mixin bg-center() {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+// ФУНКЦІЯ (повертає значення)
+@function vw-value($px, $fallback: null, $full: 1920) {
+	$vw-value: ($px / $full) * 100;
+	$rounded: round($vw-value * 100000) / 100000;
+
+	@if not $fallback {
+		@return #{$rounded}vw;
+	} @else if $px > 0 {
+		@return max(#{$rounded}vw, #{$fallback}px);
+	} @else {
+		@return min(#{$rounded}vw, #{$fallback}px);
+	}
+}
+
+// МІКСИН (ставить властивість)
+@mixin percentageValue($property, $px, $fallback: null, $full: 1920) {
+	#{$property}: vw-value($px, $fallback, $full);
+}

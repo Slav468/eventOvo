@@ -1,0 +1,47 @@
+.phone {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	max-width: 159px;
+	padding-block: 21px;
+	padding-inline: 20px;
+	font-family: var(--font-family);
+
+	@include adaptiveValue('font-size', 15, 14);
+
+	font-weight: 600;
+	color: var(--white, #ffffff);
+	background-color: var(--darkblue, #4f3ccd);
+	border-radius: 70px;
+	transition: color 0.3s ease 0s, background-color 0.3s ease 0s,
+		scale 0.3s ease 0s;
+
+	html:not([data-fls-touch]) & {
+		@media (any-hover: hover), (pointer: fine) {
+			&:hover {
+				color: var(--white, #ffffff);
+				background-color: var(--black, #1b1c1e);
+				scale: 0.95;
+			}
+		}
+	}
+
+	&_transparent {
+		padding-block: 10px;
+		padding-inline: 16px;
+		color: var(--black, #1b1c1e);
+		background-color: transparent;
+		border: 1.5px solid var(--black, #1b1c1e);
+		border-radius: 70px;
+
+		html:not([data-fls-touch]) & {
+			@media (any-hover: hover), (pointer: fine) {
+				&:hover {
+					color: var(--white, #ffffff);
+					background-color: var(--darkblue, #4f3ccd);
+				}
+			}
+		}
+	}
+}

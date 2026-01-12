@@ -1,0 +1,81 @@
+[data-fls-cursor],
+[data-fls-cursor] * {
+	cursor: none !important;
+}
+
+.fls-cursor {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+
+	&__shadow {
+		position: fixed;
+		width: to-rem(50);
+		height: to-rem(50);
+		transition: all 0.05s linear 0s;
+		will-change: transform;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: 3px solid #000000;
+			animation: rotate 5s infinite linear;
+
+			@keyframes rotate {
+				0% {
+					transform: rotate(0deg);
+				}
+
+				100% {
+					transform: rotate(-360deg);
+				}
+			}
+		}
+	}
+
+	&__pointer {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 10px;
+		height: 10px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.8);
+			border-radius: 50%;
+			transition: all 0.5s ease 0s;
+		}
+	}
+
+	&.--hover {
+		.fls-cursor__pointer::after {
+			transform: scale(5);
+		}
+
+		.fls-cursor__shadow::after {
+		}
+	}
+
+	&.--active {
+		.fls-cursor__pointer::after {
+			transition: all 0.05s ease 0s;
+			transform: scale(1);
+		}
+
+		.fls-cursor__shadow::after {
+		}
+	}
+}

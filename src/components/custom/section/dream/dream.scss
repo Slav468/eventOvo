@@ -1,0 +1,62 @@
+.dream {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	width: 100%;
+
+	&__container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+		width: 100%;
+	}
+
+	&-promo {
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		width: 100%;
+
+		@include adaptiveValue('padding', 50, 20);
+
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		border-radius: var(--border30, 30px);
+
+		// .dream-promo__img
+		&__img {
+			@include adaptiveValue('min-width', 190, 150);
+			@include adaptiveValue('margin-block-start', -85, -25);
+
+			max-height: 54px;
+			rotate: 15deg;
+		}
+	}
+
+	&-slider {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	&-button {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+	}
+}

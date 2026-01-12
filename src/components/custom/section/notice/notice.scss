@@ -1,0 +1,16 @@
+.notice {
+	&_boyard {
+		& .decor {
+			position: absolute;
+
+			&_compass {
+				z-index: 1;
+				top: -120px;
+				right: -50px;
+				aspect-ratio: 1 / 1;
+				width: 260px;
+				pointer-events: none;
+			}
+		}
+	}
+}

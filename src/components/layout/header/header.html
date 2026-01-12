@@ -1,0 +1,31 @@
+<header data-fls-header class="header" data-fls-header-scroll
+	data-fls-header-scroll-show>
+	<div class="header__container">
+
+		<include src="@components/custom/elements/logo/logo.html" locals='{
+				"imgSrc": "logo/logoHeader.svg"
+			}'>
+		</include>
+
+		<a href="tel:+79031301263" data-fls-phone
+			class="phone phone_transparent" target='_blank'>
+			+7 903 130 12 63
+		</a>
+
+		<include src="@components/layout/menu/menu.html"
+			locals='{"active":"[[active]]"}'></include>
+
+		<include src="@components/custom/elements/social/social.html">
+		</include>
+
+		<include src="@components/custom/elements/phone/phone.html"
+			locals='{
+				"phone":"+7 903 130 12 63",
+				"phoneLink":"+79031301263",
+				"dynamic": "1250",
+				"dynamicClass": ".menu-mobile__inner"
+			}'></include>
+
+
+	</div>
+</header>

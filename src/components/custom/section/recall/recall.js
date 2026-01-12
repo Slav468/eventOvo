@@ -1,0 +1,1 @@
+import './recall.scss';

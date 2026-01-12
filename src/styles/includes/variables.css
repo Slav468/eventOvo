@@ -1,0 +1,30 @@
+:root {
+	/* fonts */
+
+	--font-family: 'OpenSans', sans-serif;
+	--second-family: 'Nunito', sans-serif;
+	--third-family: 'Inter', sans-serif;
+
+	/* color */
+	--black: #1b1c1e;
+	--blue1: #7ec5ed;
+	--blue2: #94cff0;
+	--darkblue: #4f3ccd;
+	--green1: #649f36;
+	--green2: #7daf55;
+	--grey: #8d8e8f;
+	--greylight: #f5f5f5;
+	--lilac1: #9f66a0;
+	--lilac2: #ac7bad;
+	--pink: #e9408f;
+	--red1: #ed5b47;
+	--red2: #fa7766;
+	--tiffany1: #7cbaba;
+	--tiffany2: #95c7c7;
+	--violet1: #8753d1;
+	--violet2: #986bd8;
+	--white: #ffffff;
+	--yellow1: #f5bd50;
+	--yellow2: #f7ca71;
+	--border30: 30px;
+}

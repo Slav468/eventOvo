@@ -1,0 +1,162 @@
+.scenario {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	&-card {
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		background-color: var(--greylight, #f5f5f5);
+		border-radius: var(--border30);
+
+		&__img {
+			flex: 1 1 50%;
+			overflow: hidden;
+			display: flex;
+			width: 100%;
+			height: 100%;
+
+			& img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			@media (width < #{$tablet}px) {
+				flex-basis: auto;
+				aspect-ratio: 355 / 200;
+			}
+		}
+
+		&__content {
+			flex-basis: 50%;
+			align-self: stretch;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			gap: 10px;
+
+			@include adaptiveValue('padding-block', 30, 20);
+			@include adaptiveValue('padding-inline', 48, 20);
+
+			@media (width < #{$tablet}px) {
+				gap: 16px;
+			}
+		}
+
+		&__title {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding-block: 16px;
+			padding-inline: 32px;
+			font-family: var(--second-family);
+			font-size: 24px;
+			font-weight: 800;
+			line-height: 1;
+			text-align: center;
+			background: var(--white, #ffffff);
+			border-radius: 100px;
+			cursor: default;
+			rotate: 4deg;
+
+			@media (width < #{$tablet}px) {
+				align-self: flex-start;
+			}
+		}
+
+		&__list {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			width: 100%;
+		}
+
+		&_violet {
+			background-color: var(--violet1, #8753d1);
+
+			& .scenario-card__title {
+				color: var(--violet1, #8753d1);
+			}
+		}
+
+		&_red {
+			background-color: var(--red1, #ff0000);
+
+			& .scenario-card__title {
+				color: var(--red1, #ff0000);
+			}
+		}
+
+		&_green {
+			background-color: var(--green1, #00ff00);
+
+			& .scenario-card__title {
+				color: var(--green1, #00ff00);
+			}
+		}
+
+		&_yellow {
+			background-color: var(--yellow1, #f5bd50);
+
+			& .scenario-card__title {
+				color: var(--yellow1, #f5bd50);
+			}
+		}
+
+		&_tiffany {
+			background-color: var(--tiffany1, #00ccff);
+
+			& .scenario-card__title {
+				color: var(--tiffany1, #00ccff);
+			}
+		}
+
+		@include adaptiveValue('min-height', 496, 531);
+
+		@media (width < #{$tablet}px) {
+			flex-direction: column;
+		}
+	}
+
+	&_simple {
+		& .scenario-card {
+			&__content {
+				flex-basis: 100%;
+				position: relative;
+			}
+
+			&__title {
+				align-self: flex-start;
+				z-index: 1;
+				rotate: -4deg;
+			}
+
+			&__img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			& .button {
+				align-self: flex-end;
+				z-index: 1;
+			}
+		}
+	}
+}

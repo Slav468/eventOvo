@@ -1,0 +1,53 @@
+<section data-fls-timer class="timer" id="timer">
+	<div class="timer__container">
+
+		<div class="timer__content" data-change-background
+			data-background-color="--violet1, #8753d1"
+			data-background-img="@img/bg/timerBg.png">
+
+			<div class="timer__people">
+				<img class='timer__img' src="@img/people/peopleHiTimer.png"
+					alt="Image">
+			</div>
+
+			<div class="timer__bubble">
+				<div data-fls-bubble class="bubble bubble_left">
+
+					<div class="bubble__tail">
+						<svg class="" width="98" height="21" viewBox="0 0 98 21"
+							fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M96.6226 19.6853L41.0836 13.5723L1.36544 0.342889L41.9326 0.534396L96.6226 19.6853Z"
+								fill="white" stroke="black" stroke-width="1" />
+						</svg>
+					</div>
+
+					<div class="bubble__text">
+						<p>
+							Организуем вам такой праздник и подарим персонажей для
+							любого квест-шоу
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="timer__button">
+				<button data-fls-button type="button"
+					class="button button_pink">
+					Получить подарок
+				</button>
+
+				<div class="timer__clock">
+
+					<include src="@components/custom/elements/clock/clock.html"
+						locals='{
+						"deadline": "270",
+						"clockId": "clock-general"
+					}'>
+					</include>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>

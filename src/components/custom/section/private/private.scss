@@ -1,0 +1,30 @@
+.private {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		@include adaptiveValue('gap', 50, 24);
+
+		cursor: default;
+	}
+
+	&__title {
+		@include adaptiveValue('font-size', 48, 30);
+
+		font-weight: 800;
+		line-height: 1;
+	}
+
+	&__text {
+		@include adaptiveValue('font-size', 20, 16);
+
+		font-weight: 400;
+		line-height: 1.4;
+	}
+}

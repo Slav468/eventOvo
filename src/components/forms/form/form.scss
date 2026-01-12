@@ -1,0 +1,23 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
+
+	&__label {
+		width: 100%;
+
+		&:has(input[hidden]) {
+			display: none;
+		}
+	}
+
+	& .button {
+		width: 100%;
+
+		@include adaptiveValue('padding-block', 24, 16);
+		@include adaptiveValue('padding-inline', 32, 24);
+	}
+}

@@ -1,0 +1,128 @@
+.timer {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__container {
+		z-index: 1;
+	}
+
+	&__content {
+		overflow: hidden;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		justify-items: center;
+		gap: 30px 20px;
+
+		@include adaptiveValue('padding', 50, 15);
+
+		width: 100%;
+		height: 100%;
+		border-radius: var(--border30, 30px);
+
+		@include bg-center;
+
+		@media (width < #{$mobile}px) {
+			gap: 120px 20px;
+		}
+	}
+
+	&__people {
+		grid-column: 1 / 3;
+		grid-row: 1 / 3;
+		display: flex;
+		aspect-ratio: 397 / 424;
+		width: 100%;
+
+		@media (width < #{$mobile}px) {
+			grid-column: 2 / 6;
+			grid-row: 1 / 3;
+		}
+	}
+
+	&__bubble {
+		grid-column: 3 / 6;
+		grid-row: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		& .bubble {
+			rotate: -8deg;
+
+			&__text {
+				@include adaptiveValue('font-size', 30, 20);
+			}
+		}
+
+		@media (width < #{$mobile}px) {
+			grid-column: 1 / -1;
+			grid-row: 2 / 3;
+			align-self: center;
+			margin-bottom: -35px;
+
+			& .bubble {
+				& .bubble__tail {
+					top: 0;
+					right: auto;
+					left: 45%;
+					rotate: 90deg;
+					translate: -50% 0;
+				}
+
+				& .bubble__text {
+					&::before {
+						top: -3px;
+						right: auto;
+						left: calc(45% - 2px);
+						rotate: 110deg;
+					}
+
+					&::after {
+						top: -3px;
+						right: auto;
+						left: calc(45% + 3px);
+						rotate: 85deg;
+					}
+				}
+			}
+		}
+	}
+
+	&__button {
+		grid-column: 3 / 6;
+		grid-row: 2;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: fit-content;
+
+		@media (width < #{$mobile}px) {
+			grid-column: 1 / -1;
+			grid-row: 3/4;
+			align-self: flex-end;
+		}
+	}
+
+	&__clock {
+		position: absolute;
+
+		@include adaptiveValue('top', -100, -95);
+		@include adaptiveValue('right', -90, -60);
+
+		aspect-ratio: 1;
+		rotate: -8deg;
+		pointer-events: none;
+
+		@include adaptiveValue('width', 200, 120);
+	}
+
+	& .decor {
+		position: absolute;
+		z-index: 0;
+		left: -30px;
+		rotate: -45deg;
+	}
+}

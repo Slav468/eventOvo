@@ -1,0 +1,49 @@
+.survey {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+
+	&__content {
+		overflow: hidden;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		gap: 20px;
+		width: 100%;
+		border-radius: var(--border30);
+
+		@include adaptiveValue('padding-block', 90, 10);
+		@include adaptiveValue('padding-inline', 90, 10);
+		@include bg-center;
+
+		@media (width < #{$tablet}px) {
+			justify-content: center;
+		}
+	}
+
+	&-buttons {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		font-family: var(--second-family);
+		font-weight: 800;
+	}
+
+	&_boyard {
+		& .survey__content {
+			z-index: 1;
+		}
+
+		& .decor {
+			position: absolute;
+			z-index: 0;
+			top: -115px !important;
+			left: -115px !important;
+			aspect-ratio: 1 / 1 !important;
+			width: 257px !important;
+			rotate: 0deg !important;
+		}
+	}
+}

@@ -1,0 +1,819 @@
+{
+  "statistics": {
+    "sessions": [
+      {
+        "date": "24.11.2025",
+        "start": 1763984368475,
+        "end": 1763985252521
+      },
+      {
+        "date": "24.11.2025",
+        "start": 1763985366834,
+        "end": 1763985551135
+      },
+      {
+        "date": "24.11.2025",
+        "start": 1763985555219,
+        "end": 1763985582095
+      },
+      {
+        "date": "24.11.2025",
+        "start": 1763985695795,
+        "end": 1763985884518
+      },
+      {
+        "date": "24.11.2025",
+        "start": 1763985888726,
+        "end": 1763985972805
+      },
+      {
+        "date": "24.11.2025",
+        "start": 1763985976335,
+        "end": 1763986019917
+      },
+      {
+        "date": "24.11.2025",
+        "start": 1763986023597,
+        "end": 1763986097520
+      },
+      {
+        "date": "24.11.2025",
+        "start": 1763986101123,
+        "end": 1763993499132
+      },
+      {
+        "date": "24.11.2025",
+        "start": 1763993555340,
+        "end": 1764002200641
+      },
+      {
+        "date": "25.11.2025",
+        "start": 1764057868071,
+        "end": 1764082362041,
+        "type": "build"
+      },
+      {
+        "date": "26.11.2025",
+        "start": 1764141547230,
+        "end": 1764167351065
+      },
+      {
+        "date": "26.11.2025",
+        "start": 1764167515176,
+        "end": 1764172124421,
+        "type": "build"
+      },
+      {
+        "date": "27.11.2025",
+        "start": 1764230881152,
+        "end": 1764247379022
+      },
+      {
+        "date": "27.11.2025",
+        "start": 1764250771084,
+        "end": 1764251095185
+      },
+      {
+        "date": "28.11.2025",
+        "start": 1764331519294,
+        "end": 1764347722297,
+        "type": "build"
+      },
+      {
+        "date": "29.11.2025",
+        "start": 1764402585342,
+        "end": 1764405076901
+      },
+      {
+        "date": "01.12.2025",
+        "start": 1764574565839,
+        "end": 1764576944405
+      },
+      {
+        "date": "01.12.2025",
+        "start": 1764576970100,
+        "end": 1764577235783
+      },
+      {
+        "date": "01.12.2025",
+        "start": 1764577377076,
+        "end": 1764577427345
+      },
+      {
+        "date": "01.12.2025",
+        "start": 1764577436751,
+        "end": 1764583802989
+      },
+      {
+        "date": "01.12.2025",
+        "start": 1764590849913,
+        "end": 1764602928155
+      },
+      {
+        "date": "01.12.2025",
+        "start": 1764603021832,
+        "end": 1764607498158
+      },
+      {
+        "date": "02.12.2025",
+        "start": 1764660733807,
+        "end": 1764680700740,
+        "type": "build"
+      },
+      {
+        "date": "02.12.2025",
+        "start": 1764680815158,
+        "end": 1764686083752
+      },
+      {
+        "date": "03.12.2025",
+        "start": 1764745314893,
+        "end": 1764757357666
+      },
+      {
+        "date": "03.12.2025",
+        "start": 1764757417130,
+        "end": 1764757452676
+      },
+      {
+        "date": "03.12.2025",
+        "start": 1764757457051,
+        "end": 1764757635222
+      },
+      {
+        "date": "03.12.2025",
+        "start": 1764757640526,
+        "end": 1764757665691
+      },
+      {
+        "date": "03.12.2025",
+        "start": 1764757681920,
+        "end": 1764757801811
+      },
+      {
+        "date": "03.12.2025",
+        "start": 1764757806425,
+        "end": 1764757977621
+      },
+      {
+        "date": "03.12.2025",
+        "start": 1764757981582,
+        "end": 1764770317608
+      },
+      {
+        "date": "04.12.2025",
+        "start": 1764839139125,
+        "end": 1764854271684,
+        "type": "build"
+      },
+      {
+        "date": "05.12.2025",
+        "start": 1764918194458,
+        "end": 1764924995181
+      },
+      {
+        "date": "05.12.2025",
+        "start": 1764925168771,
+        "end": 1764925357461,
+        "type": "build"
+      },
+      {
+        "date": "08.12.2025",
+        "start": 1765174816261,
+        "end": 1765188451756
+      },
+      {
+        "date": "08.12.2025",
+        "start": 1765202169959,
+        "end": 1765206295066
+      },
+      {
+        "date": "09.12.2025",
+        "start": 1765265312208,
+        "end": 1765274654688,
+        "type": "build"
+      },
+      {
+        "date": "09.12.2025",
+        "start": 1765274943666,
+        "end": 1765281704975
+      },
+      {
+        "date": "09.12.2025",
+        "start": 1765281764218,
+        "end": 1765281914786
+      },
+      {
+        "date": "09.12.2025",
+        "start": 1765281918742,
+        "end": 1765284869582
+      },
+      {
+        "date": "09.12.2025",
+        "start": 1765290267017,
+        "end": 1765291251638,
+        "type": "build"
+      },
+      {
+        "date": "09.12.2025",
+        "start": 1765291516741,
+        "end": 1765293768342
+      },
+      {
+        "date": "09.12.2025",
+        "start": 1765293841748,
+        "end": 1765294582657
+      },
+      {
+        "date": "09.12.2025",
+        "start": 1765294613007,
+        "end": 1765295709178
+      },
+      {
+        "date": "10.12.2025",
+        "start": 1765358711276,
+        "end": 1765359593330
+      },
+      {
+        "date": "10.12.2025",
+        "start": 1765359645968,
+        "end": 1765359645968
+      },
+      {
+        "date": "10.12.2025",
+        "start": 1765367144184,
+        "end": 1765367251810
+      },
+      {
+        "date": "10.12.2025",
+        "start": 1765372564286,
+        "end": 1765373990010
+      },
+      {
+        "date": "10.12.2025",
+        "start": 1765376340331,
+        "end": 1765377718485,
+        "type": "build"
+      },
+      {
+        "date": "10.12.2025",
+        "start": 1765378971950,
+        "end": 1765381302818,
+        "type": "build"
+      },
+      {
+        "date": "11.12.2025",
+        "start": 1765446131148,
+        "end": 1765448677683,
+        "type": "build"
+      },
+      {
+        "date": "11.12.2025",
+        "start": 1765451578109,
+        "end": 1765784721384,
+        "type": "build"
+      },
+      {
+        "date": "15.12.2025",
+        "start": 1765786006123,
+        "end": 1765786598633
+      },
+      {
+        "date": "15.12.2025",
+        "start": 1765786603567,
+        "end": 1765787147280
+      },
+      {
+        "date": "15.12.2025",
+        "start": 1765787201806,
+        "end": 1765795406498
+      },
+      {
+        "date": "15.12.2025",
+        "start": 1765802407235,
+        "end": 1765807536702,
+        "type": "build"
+      },
+      {
+        "date": "16.12.2025",
+        "start": 1765872243858,
+        "end": 1765872530477,
+        "type": "build"
+      },
+      {
+        "date": "16.12.2025",
+        "start": 1765872936087,
+        "end": 1765873520706,
+        "type": "build"
+      },
+      {
+        "date": "16.12.2025",
+        "start": 1765873723244,
+        "end": 1765874409481,
+        "type": "build"
+      },
+      {
+        "date": "16.12.2025",
+        "start": 1765884386909,
+        "end": 1765885699270
+      },
+      {
+        "date": "16.12.2025",
+        "start": 1765885819339,
+        "end": 1765885858215,
+        "type": "build"
+      },
+      {
+        "date": "16.12.2025",
+        "start": 1765887268171,
+        "end": 1765895000418,
+        "type": "build"
+      },
+      {
+        "date": "16.12.2025",
+        "start": 1765895513351,
+        "end": 1765897422401
+      },
+      {
+        "date": "17.12.2025",
+        "start": 1765952484804,
+        "end": 1765954333220,
+        "type": "build"
+      },
+      {
+        "date": "17.12.2025",
+        "start": 1765954457703,
+        "end": 1765962459842,
+        "type": "build"
+      },
+      {
+        "date": "17.12.2025",
+        "start": 1765967498419,
+        "end": 1765972335573
+      },
+      {
+        "date": "17.12.2025",
+        "start": 1765972414583,
+        "end": 1765980578677,
+        "type": "build"
+      },
+      {
+        "date": "18.12.2025",
+        "start": 1766050948156,
+        "end": 1766050948156
+      },
+      {
+        "date": "18.12.2025",
+        "start": 1766051174821,
+        "end": 1766051174821
+      },
+      {
+        "date": "18.12.2025",
+        "start": 1766051386657,
+        "end": 1766051598079
+      },
+      {
+        "date": "18.12.2025",
+        "start": 1766051603983,
+        "end": 1766051603983
+      },
+      {
+        "date": "18.12.2025",
+        "start": 1766051707011,
+        "end": 1766051855795
+      },
+      {
+        "date": "18.12.2025",
+        "start": 1766051861781,
+        "end": 1766053682120,
+        "type": "build"
+      },
+      {
+        "date": "18.12.2025",
+        "start": 1766054148914,
+        "end": 1766056012481
+      },
+      {
+        "date": "18.12.2025",
+        "start": 1766056018419,
+        "end": 1766058569530,
+        "type": "build"
+      },
+      {
+        "date": "18.12.2025",
+        "start": 1766060203672,
+        "end": 1766061565873
+      },
+      {
+        "date": "18.12.2025",
+        "start": 1766062972737,
+        "end": 1766064378984,
+        "type": "build"
+      },
+      {
+        "date": "19.12.2025",
+        "start": 1766130882792,
+        "end": 1766148391391,
+        "type": "build"
+      },
+      {
+        "date": "22.12.2025",
+        "start": 1766406808705,
+        "end": 1766409834012
+      },
+      {
+        "date": "23.12.2025",
+        "start": 1766471588306,
+        "end": 1766476382611
+      },
+      {
+        "date": "24.12.2025",
+        "start": 1766559255717,
+        "end": 1766580566948
+      },
+      {
+        "date": "24.12.2025",
+        "start": 1766581098510,
+        "end": 1766591084210,
+        "type": "build"
+      },
+      {
+        "date": "29.12.2025",
+        "start": 1766993740446,
+        "end": 1766997942000
+      },
+      {
+        "date": "29.12.2025",
+        "start": 1766998326320,
+        "end": 1766999118339,
+        "type": "build"
+      },
+      {
+        "date": "29.12.2025",
+        "start": 1767003970517,
+        "end": 1767007113638,
+        "type": "build"
+      },
+      {
+        "date": "30.12.2025",
+        "start": 1767085574643,
+        "end": 1767089129877
+      },
+      {
+        "date": "05.01.2026",
+        "start": 1767600453277,
+        "end": 1767605984466
+      },
+      {
+        "date": "05.01.2026",
+        "start": 1767606049513,
+        "end": 1767610829621
+      },
+      {
+        "date": "06.01.2026",
+        "start": 1767681166552,
+        "end": 1767682745424,
+        "type": "build"
+      },
+      {
+        "date": "12.01.2026",
+        "start": 1768199394273,
+        "end": 1768209644943,
+        "type": "build"
+      },
+      {
+        "date": "12.01.2026",
+        "start": 1768210121027,
+        "end": 1768227807294,
+        "type": "build"
+      },
+      {
+        "date": "12.01.2026",
+        "start": 1768228682996,
+        "end": 1768228881326,
+        "type": "build"
+      },
+      {
+        "date": "12.01.2026",
+        "start": 1768228949825,
+        "end": 1768230109303,
+        "type": "build"
+      },
+      {
+        "date": "12.01.2026",
+        "start": 1768230692977,
+        "end": 1768230956413,
+        "type": "build"
+      },
+      {
+        "date": "12.01.2026",
+        "start": 1768231587071,
+        "end": 1768231666896
+      }
+    ],
+    "files": [
+      "spritemap.scss",
+      "menu.scss",
+      "arrowDown.svg",
+      "menu.html",
+      "header.scss",
+      "style.scss",
+      "app.js",
+      "logo.scss",
+      "header.html",
+      "phone.html",
+      "phone.scss",
+      "social.html",
+      "social.scss",
+      "drop.js",
+      "promo.html",
+      "index.html",
+      "index.scss",
+      "promo.scss",
+      "text.png",
+      "violetFire.png",
+      "sectiondefault.html",
+      "section.js",
+      "section.html",
+      "section.scss",
+      "notice.html",
+      "slider.html",
+      "slider-item.html",
+      "slider.scss",
+      "slider.js",
+      "arrow.svg",
+      "change.js",
+      "functions.js",
+      "quiz.html",
+      "quiz.scss",
+      "dream.html",
+      "dream.scss",
+      "bubble.html",
+      "bubble.scss",
+      "_components.html",
+      "textDreamMob.png",
+      "autoplay.html",
+      "autoplay2.html",
+      "autoplay3.html",
+      "marquee.html",
+      "button.html",
+      "button.scss",
+      "organization.html",
+      "organization.scss",
+      "simple.html",
+      "simple2.html",
+      "moments.html",
+      "moments.scss",
+      "peopleFire.png",
+      "peopleTiger.png",
+      "peopleHi.png",
+      "timer.html",
+      "timer.scss",
+      "variables.css",
+      "mixins.scss",
+      "clock.html",
+      "clock.js",
+      "clock.svg",
+      "clock.scss",
+      "example.html",
+      "example.scss",
+      "fireWork.svg",
+      "smileHappy.svg",
+      "smileLang.svg",
+      "medal.svg",
+      "people.html",
+      "people.scss",
+      "places.html",
+      "places.scss",
+      "holiday.html",
+      "tabs.html",
+      "holiday.scss",
+      "tabs.scss",
+      "tabs.js",
+      "showmoreitem.html",
+      "showmoreitem.js",
+      "showmoreitem.scss",
+      "provision.scss",
+      "provision.html",
+      "provision.js",
+      "keyframes.scss",
+      "scenarios.html",
+      "spollers.js",
+      "showmore.js",
+      "scenarios.scss",
+      "check.svg",
+      "tg.svg",
+      "scenario1.png",
+      "team.html",
+      "team1.png",
+      "team.scss",
+      "banner.html",
+      "banner.scss",
+      "map.html",
+      "map.scss",
+      "footer.html",
+      "footer.scss",
+      "footer-center.html",
+      "showmore.html",
+      "spollers.scss",
+      "adress.html",
+      "address.js",
+      "footer-top.html",
+      "address.html",
+      "address.scss",
+      "faq.html",
+      "faq.scss",
+      "faq.js",
+      "reviews.html",
+      "reviews.scss",
+      "recall.html",
+      "recall.scss",
+      "price.html",
+      "price.js",
+      "price.scss",
+      "sliderBgWhiteSimple.png",
+      "survey.html",
+      "inner.html",
+      "main.html",
+      "popup.js",
+      "popup.html",
+      "survey.scss",
+      "popup.scss",
+      "close.svg",
+      "settings.scss",
+      "checked.svg",
+      "scroll.scss",
+      "plain.html",
+      "plain.scss",
+      "blog.html",
+      "article.html",
+      "article.scss",
+      "blog.scss",
+      "media.html",
+      "media.scss",
+      "about.html",
+      "about.scss",
+      "wup.svg",
+      "showmore.scss",
+      "extends.scss",
+      "article.js",
+      "links.html",
+      "links.scss",
+      "links.js",
+      "exampleFullhtml",
+      "exampleFull.html",
+      "logoHeader.svg",
+      "adt.html",
+      "adt.scss",
+      "place.html",
+      "iconfont.svg",
+      "iconfont.ttf",
+      "iconfont.woff2",
+      "iconfont.html",
+      "playground.html",
+      "birthday.scss",
+      "birthday-adult.scss",
+      "birthday-child.scss",
+      "birthday-child.js",
+      "birthday-adult.js",
+      "birthday-child.html",
+      "birthday-adult.html",
+      "contacts.html",
+      "addressSection.html",
+      "cooperation.html",
+      "offer.html",
+      "teaser.html",
+      "teaser.scss",
+      "odds.js",
+      "odds.html",
+      "odds.scss",
+      "offer.scss",
+      "partnership.html",
+      "partnership.scss",
+      "point.html",
+      "point.scss",
+      "messangers.scss",
+      "messengers.scss",
+      "messengers.html",
+      "messengers.js",
+      "fls-wp-styles.js",
+      "404.php",
+      "archive.php",
+      "composer.json",
+      "functions.php",
+      "header.php",
+      "index.php",
+      "LICENSE",
+      "page.php",
+      "phpcs.xml.dist",
+      "README.md",
+      "single.php",
+      "custom-header.php",
+      "customizer.php",
+      "template-tags.php",
+      "woocommerce.php",
+      "fls.pot",
+      "content-none.php",
+      "content-page.php",
+      "content-search.php",
+      "fail.html",
+      "contacts.scss",
+      "playgrounds.html",
+      "prices.html",
+      "review.js",
+      "review.scss",
+      "review.html",
+      "scenario.js",
+      "scenario.html",
+      "scenario.scss",
+      "places.js",
+      "place.scss",
+      "place.js",
+      "fails.html",
+      "fails.js",
+      "fail.scss",
+      "fails.scss",
+      "404.html",
+      "personal.html",
+      "privacy.html",
+      "personal.scss",
+      "rent-room.html",
+      "rent-film.html",
+      "rent-film.js",
+      "rent-room.js",
+      "private.html",
+      "private-privacy.html",
+      "private.js",
+      "private.scss",
+      "private-personal.html",
+      "form.html",
+      "input.html",
+      "input.scss",
+      "form.scss",
+      "popupBg2.png",
+      "survey.js",
+      "_lang.json",
+      "datepicker.scss",
+      "datepicker.html",
+      "datepicker.js",
+      "plain.js",
+      "moscowscenarios.html",
+      "moscowscenarios.scss",
+      "moscow-scenarios.html",
+      "involve.html",
+      "involve.scss",
+      "scenarioSimple.html",
+      "moscowscenarioschildbirthday.js",
+      "moscowchildbirthday.js",
+      "moscowchildbirthday.html",
+      "moscow-child-birthday.html",
+      "moscow-child-birthday-outdoor.html",
+      "moscowchildbirthdayoutdoor.js",
+      "moscowchildbirthdayoutdoor.html",
+      "moscowchildbirthdayplace.js",
+      "moscow-child-birthday-place.html",
+      "moscow-adult-birthday.html",
+      "moscowadultbirthday.js",
+      "moscowadultbirthdayoutdoor.js",
+      "moscow-adult-birthday-outdoor.html",
+      "moscow-adult-birthday-place.html",
+      "moscowadultbirthdayplace.js",
+      "moscowadultbirthday.html",
+      "moscowadultbirthdayplace.html",
+      "moscowchildbirthdayplace.html",
+      "boyardScenarios — копия.html",
+      "boyardScenarios.html",
+      "boyardChildBirthdayPlace.html",
+      "boyardChildBirthdayOutdoor.html",
+      "boyardChildBirthday.html",
+      "boyardAdultBirthdayPlace.html",
+      "boyardAdultBirthdayOutdoor.html",
+      "boyardAdultBirthday.html",
+      "jumanjiAdultBirthday.html",
+      "jumanjiAdultBirthdayOutdoor.html",
+      "jumanjiAdultBirthdayPlace.html",
+      "jumanjiChildBirthday.html",
+      "jumanjiChildBirthdayOutdoor.html",
+      "jumanjiChildBirthdayPlace.html",
+      "jumanjiScenarios.html",
+      "boyardscenarios.html",
+      "promoBoyard.html",
+      "sliderBoyard.html",
+      "noticeBoyard.html",
+      "notice.scss",
+      "quizBoyard.html",
+      "exampleFullBoyard.html",
+      "adtBoyard.html",
+      "surveyBoyard.html",
+      "timerBoyard.html",
+      "peopleTigerTimer.png",
+      "exampleBoyard.html",
+      "involveBoyard.html",
+      "teamBoyard.html",
+      "faqBoyard.html",
+      "bannerBoyard.html",
+      "boyardadultbirthday.html",
+      "involve.js"
+    ]
+  }
+}

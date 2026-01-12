@@ -1,0 +1,79 @@
+.messengers {
+	display: flex;
+	width: 100%;
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 20px;
+		width: 100%;
+
+		@media (width < #{$tablet}px) {
+			flex-direction: column-reverse;
+		}
+	}
+
+	&-people {
+		& .people {
+			flex-direction: row-reverse;
+
+			&__img {
+				max-width: 252px;
+				max-height: 269px;
+				rotate: -15deg;
+				scale: -1 1;
+
+				@media (width < #{$mobileSmall}px) {
+					align-self: flex-start;
+				}
+			}
+
+			& .bubble {
+				rotate: 15deg;
+
+				&__tail {
+					top: calc(100% - 10px);
+					right: unset;
+					left: 20%;
+					rotate: -45deg;
+				}
+			}
+
+			@media (width < #{$mobileSmall}px) {
+				flex-direction: column;
+				width: 100%;
+			}
+		}
+
+		@media (width < #{$mobileSmall}px) {
+			width: 100%;
+		}
+	}
+
+	&-contacts {
+		background-color: var(--greylight, #f5f5f5);
+		border-radius: var(--border30, 30px);
+
+		& .partnership {
+			&-contacts {
+				&__label {
+					font-weight: 600;
+					color: var(--black, #1b1c1e);
+
+					@include adaptiveValue('font-size', 30, 20);
+				}
+
+				&__link {
+					font-weight: 800;
+					line-height: 1;
+					color: var(--darkblue, #4f3ccd);
+
+					@include adaptiveValue('font-size', 48, 30);
+				}
+			}
+		}
+
+		@include adaptiveValue('padding', 50, 30);
+	}
+}

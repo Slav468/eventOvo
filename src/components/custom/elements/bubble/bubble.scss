@@ -1,0 +1,74 @@
+.bubble {
+	position: relative;
+	display: inline-flex;
+	width: fit-content;
+	rotate: -2deg;
+
+	&__tail {
+		position: absolute;
+		z-index: 0;
+		top: calc(50% - 10px);
+		right: -45px;
+	}
+
+	&__text {
+		position: relative;
+		z-index: 0;
+		font-weight: 600;
+		background-color: var(--white, #ffffff);
+		border: 1px solid var(--black, #1b1c1e);
+		border-radius: 10px;
+		cursor: default;
+
+		& span {
+			color: var(--darkblue, #4f3ccd);
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			z-index: 1;
+			right: -5px;
+			display: flex;
+			width: 10px;
+			height: 6px;
+			background-color: var(--white, #ffffff);
+		}
+
+		&::before {
+			top: calc(50% - 5px);
+			rotate: 20deg;
+		}
+
+		&::after {
+			top: calc(50% - 2px);
+			rotate: 2deg;
+		}
+
+		@include adaptiveValue('padding-block', 20, 10);
+		@include adaptiveValue('padding-inline', 30, 10);
+		@include adaptiveValue('font-size', 20, 16);
+	}
+
+	&_left {
+		.bubble {
+			&__tail {
+				right: unset;
+				left: -45px;
+			}
+
+			&__text {
+				&::before {
+					top: calc(50% - 2px);
+					left: -5px;
+				}
+
+				&::after {
+					top: calc(50% - 8px);
+					left: -5px;
+				}
+			}
+		}
+	}
+}

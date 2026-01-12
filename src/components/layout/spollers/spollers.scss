@@ -1,0 +1,105 @@
+// Базові стилі спойлерів
+// Сніппет (HTML): spoller
+
+[data-fls-spollers] {
+	summary {
+		list-style: none;
+
+		&::marker,
+		&::-webkit-details-marker {
+			display: none;
+		}
+	}
+}
+
+// Блок зі спойлерами
+.spoiler {
+	&__body {
+		color: var(--white, #ffffff);
+	}
+
+	&__title {
+		// position: relative;
+		display: flex;
+		gap: 15px;
+		font-size: 20px;
+		font-weight: 600;
+		list-style: none;
+		cursor: default;
+
+		&::marker,
+		&::-webkit-details-marker {
+			display: none;
+		}
+
+		.--spoller-init & {
+			& .spoiler__icon {
+				display: flex;
+			}
+
+			cursor: pointer;
+
+			&.--spoller-active {
+				& .spoiler__icon {
+					rotate: -180deg;
+				}
+			}
+		}
+
+		& a {
+			transition: color 0.3s ease 0s;
+
+			html:not([data-fls-touch]) & {
+				@media (any-hover: hover), (pointer: fine) {
+					&:hover {
+						color: var(--pink, #e9408f);
+					}
+				}
+			}
+		}
+	}
+
+	&__icon {
+		display: none;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 1;
+		width: 24px;
+		height: 24px;
+		transition: rotate 0.3s ease 0s;
+
+		& svg {
+			width: 90%;
+			height: 90%;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+
+		.--spoller-init & {
+			padding-top: 16px;
+		}
+	}
+
+	&__item {
+		padding-block: 5px;
+		font-size: 16px;
+		font-weight: 600;
+		color: var(--greylight, #f5f5f5);
+	}
+
+	&__link {
+		transition: color 0.3s ease 0s;
+
+		html:not([data-fls-touch]) & {
+			@media (any-hover: hover), (pointer: fine) {
+				&:hover {
+					color: var(--pink, #e9408f);
+				}
+			}
+		}
+	}
+}

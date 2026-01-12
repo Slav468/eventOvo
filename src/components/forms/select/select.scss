@@ -1,0 +1,187 @@
+// <SELECT>
+// Сніппет (HTML): sel
+.select {
+	position: relative;
+	min-width: 0;
+
+	// .select__body
+	&__body {
+		position: relative;
+	}
+
+	// .select__title
+	&__title {
+		width: 100%;
+		text-align: left;
+		color: inherit;
+		background-color: #ffffff;
+		border: 1px solid #d9d9d9;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	// .select__value
+	&__value {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		min-width: 0;
+		height: 30px;
+
+		> * {
+			flex: 1 1 auto;
+		}
+
+		&::after {
+			content: '';
+			flex: 0 0 10px;
+			align-self: stretch;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: all 0.3s ease 0s;
+
+			.--select-open & {
+				transform: rotate(-180deg);
+			}
+		}
+
+		&.--select-pseudo-label {
+			&::before {
+				content: attr(data-pseudo-label);
+				opacity: 0.5;
+			}
+		}
+	}
+
+	// .select__content
+	&__content {
+		flex: 1 1 auto;
+		overflow: hidden;
+		padding: 0 10px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	// .select__text
+	&__text {
+		flex: 1 1 auto;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&__input {
+		width: 100%;
+		height: 100%;
+		padding: 0 10px;
+		background-color: transparent;
+
+		.--select-active & {
+			&::placeholder {
+				color: #000000;
+			}
+		}
+
+		.--select-focus & {
+			&::placeholder {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	// .select__options
+	&__options {
+		position: absolute;
+		top: calc(100% - to-rem(1));
+		left: 0;
+		min-width: 100%;
+		padding: 10px 0 5px;
+		color: #000000;
+		background-color: #ffffff;
+		border: 1px solid #d9d9d9;
+		border-top: 0;
+		border-radius: 0 0 4px 4px;
+	}
+
+	// .select__scroll
+	&__scroll {
+		overflow: hidden auto;
+
+		// Максимальна висота
+		max-height: to-rem(200);
+
+		// Стилі скроллбару
+		.simplebar-scrollbar {
+			&::before {
+				// opacity: 1;
+			}
+		}
+	}
+
+	// .select__option
+	&__option {
+		width: 100%;
+		padding: 5px 10px;
+		text-align: left;
+		color: inherit;
+		cursor: pointer;
+
+		&.--select-selected {
+			background-color: #eeeeee;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background: #d9d9d9;
+			}
+		}
+	}
+
+	// Конструкція додаткових даних
+	&__row {
+		display: inline-flex;
+		align-items: center;
+	}
+
+	&__asset {
+	}
+
+	&__text {
+	}
+
+	&--show-top {
+		.select__options {
+			top: auto;
+			bottom: calc(100% - to-rem(1));
+			padding: 5px 0 10px;
+			border: 1px solid #d9d9d9;
+			border-bottom: 0;
+			border-radius: 4px 4px 0 0;
+		}
+	}
+
+	// Стан селекту
+	&.--select-open {
+	}
+
+	&.--select-disabled {
+	}
+
+	&.--select-active {
+	}
+
+	&.--select-focus {
+	}
+
+	&.--select-multiple {
+	}
+
+	&.--select-checkbox {
+	}
+}
+
+// Тег
+.--select-tag {
+	cursor: pointer;
+}

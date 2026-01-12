@@ -1,0 +1,32 @@
+@font-face {
+	font-family: "iconfont";
+	font-display: swap;
+	src: url("E://Programming/WORK/eventOvo/src/assets/svgicons/preview/iconfont.woff2?ba1056baf437b2f535578e33eae86239") format("woff2");
+}
+[class*="--icon-"]::before{
+	font-family: iconfont;
+}
+	[class*="--icon-wup"]::before {
+		content: "\f101";
+	}
+	[class*="--icon-tg"]::before {
+		content: "\f102";
+	}
+	[class*="--icon-close"]::before {
+		content: "\f103";
+	}
+	[class*="--icon-clock"]::before {
+		content: "\f104";
+	}
+	[class*="--icon-checkedThin"]::before {
+		content: "\f105";
+	}
+	[class*="--icon-checked"]::before {
+		content: "\f106";
+	}
+	[class*="--icon-arrowDown"]::before {
+		content: "\f107";
+	}
+	[class*="--icon-arrow"]::before {
+		content: "\f108";
+	}

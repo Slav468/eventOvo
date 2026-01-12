@@ -1,0 +1,43 @@
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--white, #ffffff);
+
+	// .header__container
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		& > .social {
+			& .social {
+				&__list {
+					flex-wrap: nowrap;
+
+					@include adaptiveValue('gap', 16, 12);
+				}
+
+				&__item {
+					width: 40px;
+				}
+			}
+
+			@media (width < #{$mobile}px) {
+				display: none;
+			}
+		}
+
+		@include adaptiveValue('gap', 20, 10, 0, 1920, 1280);
+	}
+
+	& .phone_transparent {
+		display: none;
+
+		@media (width <= 1250px) {
+			display: flex;
+		}
+	}
+
+	@include adaptiveValue('padding-block', 10, 5);
+}

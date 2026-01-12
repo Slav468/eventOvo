@@ -1,0 +1,76 @@
+.section {
+	overflow: hidden;
+
+	@include adaptiveValue('gap', 65, 32);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	@include bg-center;
+
+	&__container {
+		align-self: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+
+		@include adaptiveValue('gap', 65, 32);
+	}
+
+	&-head {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		pointer-events: none;
+
+		// .section-head__title
+		&__title {
+			font-family: var(--second-family);
+
+			@include adaptiveValue('font-size', 64, 35);
+
+			font-weight: 800;
+			line-height: 1;
+			text-align: center;
+			color: var(--pink, #e9408f);
+
+			& span {
+				color: var(--darkblue, #4f3ccd);
+			}
+		}
+
+		// .section-head__subtitle
+		&__subtitle {
+			font-family: var(--second-family);
+
+			@include adaptiveValue('font-size', 40, 20);
+
+			font-weight: 800;
+			line-height: 1;
+			text-align: center;
+		}
+	}
+
+	&-content {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+
+		@include adaptiveValue('gap', 30, 16);
+
+		&:has(.decor) {
+			z-index: 1;
+
+			@include adaptiveValue('padding-top', 0, 190);
+		}
+	}
+
+	& .people {
+		align-self: flex-end;
+	}
+}

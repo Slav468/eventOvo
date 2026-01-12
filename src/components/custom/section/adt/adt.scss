@@ -1,0 +1,122 @@
+.adt {
+	position: relative;
+	display: flex;
+	width: 100%;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		width: 100%;
+	}
+
+	&__item {
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 50px;
+		width: 100%;
+		border-radius: var(--border30, 30px);
+
+		& .people {
+			align-self: center;
+			flex-direction: column;
+			gap: 30px;
+
+			& .bubble {
+				&__tail {
+					top: calc(100% - 10px);
+					right: 25%;
+					rotate: 90deg;
+
+					@media (width < 769px) {
+						top: calc(100% - 20px);
+						right: 50%;
+						scale: -1 1;
+					}
+				}
+
+				&__text {
+					&::before,
+					&::after {
+						content: none;
+					}
+				}
+			}
+
+			&__img {
+				align-self: flex-start;
+				rotate: -15deg;
+				scale: -1 1;
+
+				@media (width < 769px) {
+					align-self: flex-end;
+					rotate: 15deg;
+					scale: 1 1;
+				}
+			}
+
+			@media (width < 769px) {
+				gap: 0;
+			}
+		}
+
+		& .slider-block {
+			max-width: 375px;
+		}
+
+		@include bg-center;
+		@include adaptiveValue('padding', 80, 40);
+
+		@media (width < 769px) {
+			flex-direction: column;
+			gap: 0;
+		}
+	}
+
+	&_boyard {
+		& .decor {
+			position: absolute;
+
+			&_compass {
+				top: -80px;
+				right: auto;
+				left: 0;
+				display: none;
+				aspect-ratio: initial;
+				width: 120px;
+
+				@media (width < #{$mobile}px) {
+					display: flex;
+				}
+			}
+
+			&_coins {
+				top: 45%;
+				right: -120px;
+				width: 315px;
+				rotate: 15deg;
+			}
+
+			&_key {
+				top: 35%;
+				right: auto;
+				left: -345px;
+				aspect-ratio: 1;
+				width: 345px;
+				rotate: -15deg;
+				scale: -1 1;
+			}
+
+			&_bunch {
+				inset: auto auto -220px -515px;
+				aspect-ratio: 1 / 1;
+				width: 750px;
+				rotate: -35deg;
+			}
+		}
+	}
+}

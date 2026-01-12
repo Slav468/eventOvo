@@ -1,0 +1,70 @@
+.place {
+	display: flex;
+	width: 100%;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+		width: 100%;
+	}
+
+	&-item {
+		overflow: hidden;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		width: 100%;
+		border-radius: var(--border30);
+
+		&__promo {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			& .button {
+				@include adaptiveValue('font-size', 24, 20);
+			}
+
+			@include adaptiveValue('gap', 90, 30);
+
+			@media (width < #{$tablet}px) {
+				grid-column: 1 / -1;
+				grid-row: 1;
+			}
+		}
+
+		&__title {
+			font-family: var(--second-family);
+			font-weight: 800;
+			line-height: 1;
+			color: var(--white, #ffffff);
+
+			@include adaptiveValue('font-size', 48, 30);
+		}
+
+		&__slider {
+			grid-column: 2 / -1;
+			position: relative;
+
+			& > .slider-block__prev {
+				left: -25px;
+			}
+
+			& > .slider-block__next {
+				right: -25px;
+			}
+
+			@media (width < #{$tablet}px) {
+				grid-column: 1 / -1;
+				grid-row: 2;
+			}
+		}
+
+		@include adaptiveValue('padding', 50, 30);
+		@include adaptiveValue('gap', 100, 30);
+		@include adaptiveValue('min-height', 455, 355);
+		@include bg-center;
+	}
+}

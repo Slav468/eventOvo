@@ -1,0 +1,62 @@
+.odds {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	// .teaser__list
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(355px, 100%), 1fr));
+		width: 100%;
+
+		@include adaptiveValue('gap', 30, 10);
+	}
+
+	&-item {
+		overflow: hidden;
+		display: flex;
+		background: var(--yellow1, #f5bd50);
+		background-image: url('@img/bg/oddsBg1.svg');
+		border-radius: var(--border30, 30px);
+
+		&:nth-child(even) {
+			background-image: url('@img/bg/oddsBg2.svg');
+		}
+		// .teaser-item__content
+		&__content {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+			cursor: default;
+		}
+
+		// .teaser-item__label
+		&__label {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding-block: 16px;
+			padding-inline: 48px;
+			font-weight: 700;
+			color: var(--white, #ffffff);
+			background: var(--violet1, #8753d1);
+			border-radius: 100px;
+			rotate: -3deg;
+
+			@include adaptiveValue('font-size', 32, 24);
+		}
+
+		// .teaser-item__text
+		&__text {
+			font-size: 24px;
+			font-weight: 700;
+
+			// line-height: 29px;
+			line-height: 1.2;
+			color: #1b1c1e;
+		}
+
+		@include bg-center;
+		@include adaptiveValue('padding', 50, 30);
+	}
+}

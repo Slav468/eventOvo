@@ -1,0 +1,67 @@
+<section data-fls-section class="section" id='holiday'>
+	<div class="section-head">
+		<div class="section-head__title">
+			<h2>Незабываемые моменты <br> <span>с наших праздников</span>
+			</h2>
+		</div>
+		<div class="section-head__subtitle">
+			<p>Подзаголовок</p>
+		</div>
+	</div>
+
+	<div class="section-content">
+		<!-- content -->
+		<div data-fls-holiday class="holiday">
+			<div data-fls-tabs class="tabs">
+
+				<div class="tabs__container">
+					<div class="tabs__decor">
+						<img src="@img/people/peopleHeart.png" alt="Image">
+					</div>
+					<nav data-fls-tabs-titles class="tabs__navigation">
+						<button type="button" class="tabs__title --tab-active">
+							Персонажи
+						</button>
+						<button type="button" class="tabs__title">
+							Родители и дети
+						</button>
+						<button type="button" class="tabs__title">
+							Взрослые отдыхают
+						</button>
+					</nav>
+				</div>
+
+				<div data-fls-tabs-body class="tabs__content">
+					<div class="tabs__body">
+						<include src="@components/layout/slider/autoplay.html">
+						</include>
+						<include src="@components/layout/slider/autoplay2.html">
+						</include>
+						<include src="@components/layout/slider/autoplay3.html">
+						</include>
+					</div>
+
+					<div class="tabs__body">
+
+						<include src="@components/layout/slider/autoplay2.html">
+						</include>
+						<include src="@components/layout/slider/autoplay3.html">
+						</include>
+						<include src="@components/layout/slider/autoplay.html">
+						</include>
+					</div>
+
+					<div class="tabs__body">
+						<include src="@components/layout/slider/autoplay3.html">
+						</include>
+						<include src="@components/layout/slider/autoplay.html">
+						</include>
+						<include src="@components/layout/slider/autoplay2.html">
+						</include>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>

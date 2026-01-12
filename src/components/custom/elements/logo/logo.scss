@@ -1,0 +1,24 @@
+.logo {
+	position: relative;
+	z-index: 5;
+	display: flex;
+	aspect-ratio: 154 / 82;
+
+	@include adaptiveValue('max-width', 154, 114);
+
+	// .logo__link
+	&__link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+
+	// .logo__img
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}

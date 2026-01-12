@@ -1,0 +1,660 @@
+<link rel="stylesheet" href="@components/layout/popup/popup.scss">
+
+<div data-fls-popup="survey-messenger" aria-hidden="true"
+	class="popup popup-survey">
+	<div data-fls-popup-wrapper class="popup__wrapper">
+		<div data-fls-popup-body class="popup__body">
+
+			<button data-fls-popup-close type="button" class="popup__close">
+				<svg>
+					<use xlink:href="__spritemap#sprite-close"></use>
+				</svg>
+			</button>
+
+			<div data-fls-popup-content class="popup__content">
+				<!-- Контент -->
+
+				<div class="popup-head">
+
+					<div class="popup-head__people">
+						<img src="@img/people/peopleMicro.png" alt="Image">
+					</div>
+
+					<div class="popup-head__bubble">
+						<div data-fls-bubble class="bubble">
+
+							<div class="bubble__tail">
+								<svg class="" width="98" height="21"
+									viewBox="0 0 98 21" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M96.6226 19.6853L41.0836 13.5723L1.36544 0.342889L41.9326 0.534396L96.6226 19.6853Z"
+										fill="white" stroke="black" stroke-width="1" />
+								</svg>
+							</div>
+
+							<div class="bubble__text">
+								<p>
+									Отправлю цены и дату <br> в течение 5 минут
+								</p>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+				<div class="popup-body">
+					<div class="popup-body__title">
+						Принято! <br>
+						Выберите удобный <br> мессенджер
+					</div>
+
+					<div class="popup-body__buttons">
+						<button type="button" data-fls-popup-link="survey-form"
+							data-value='WhatsApp' data-input-id='survey-messenger'
+							class="popup-body__button">
+							<span class="button-icon">
+								<img src="@img/social/wup.png" alt="WhatsApp link">
+							</span>
+						</button>
+
+						<button type="button" data-fls-popup-link="survey-form"
+							data-value='Telegram' data-input-id='survey-messenger'
+							class="popup-body__button">
+							<span class="button-icon">
+								<img src="@img/social/tg.png" alt="Telegram link">
+							</span>
+						</button>
+
+						<button type="button" data-fls-popup-link="survey-form"
+							data-value='Max' data-input-id='survey-messenger'
+							class="popup-body__button">
+							<span class="button-icon">
+								<img src="@img/social/max.png" alt="Max link">
+							</span>
+						</button>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div data-fls-popup="survey-form" aria-hidden="true"
+	class="popup popup-survey">
+	<div data-fls-popup-wrapper class="popup__wrapper">
+		<div data-fls-popup-body class="popup__body">
+
+			<button data-fls-popup-close type="button" class="popup__close">
+				<svg>
+					<use xlink:href="__spritemap#sprite-close"></use>
+				</svg>
+			</button>
+
+			<div data-fls-popup-content class="popup__content">
+				<!-- Контент -->
+
+				<div class="popup-head">
+
+					<div class="popup-head__people">
+						<img src="@img/people/peoplePistolsBig.png" alt="Image">
+					</div>
+
+					<div class="popup-head__bubble">
+						<div data-fls-bubble class="bubble">
+
+							<div class="bubble__tail">
+								<svg class="" width="98" height="21"
+									viewBox="0 0 98 21" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M96.6226 19.6853L41.0836 13.5723L1.36544 0.342889L41.9326 0.534396L96.6226 19.6853Z"
+										fill="white" stroke="black" stroke-width="1" />
+								</svg>
+							</div>
+
+							<div class="bubble__text">
+								<p>
+									А теперь напишите номер <br>
+									телефона, на который <br>
+									я пришлю результаты
+								</p>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+				<div class="popup-body">
+					<div class="popup-body__title">
+						Введите номер <br> телефона
+					</div>
+
+					<div class="popup-body__form">
+						<form data-fls-form="dev" id='survey-form'
+							data-fls-form-popup="survey-thanks" method="POST"
+							action="#" class='form'>
+
+							<label class='form__label'>
+								<input data-fls-input type="text" id='survey-interval'
+									value='' hidden>
+							</label>
+
+							<label class='form__label'>
+								<input data-fls-input type="text"
+									id='survey-messenger' value='' hidden>
+							</label>
+							<!-- Добавление маски телефона через дата атрибут data-fls-input-mask="+38(999) 999-9999" -->
+							<label class='form__label'>
+								<input data-fls-input autocomplete="off" type="text"
+									placeholder="Телефон" id='survey-phone' value=''
+									class="input">
+							</label>
+							<button type="submit" class="button">Отправить</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div data-fls-popup="survey-thanks" aria-hidden="true"
+	class="popup popup-survey">
+	<div data-fls-popup-wrapper class="popup__wrapper">
+		<div data-fls-popup-body class="popup__body">
+
+			<button data-fls-popup-close type="button" class="popup__close">
+				<svg>
+					<use xlink:href="__spritemap#sprite-close"></use>
+				</svg>
+			</button>
+
+			<div data-fls-popup-content class="popup__content">
+				<!-- Контент -->
+
+				<div class="popup-head">
+
+					<div class="popup-head__people">
+						<img src="@img/people/peopleHeartBig.png" alt="Image">
+					</div>
+
+					<div class="popup-head__bubble">
+						<div data-fls-bubble class="bubble">
+
+							<div class="bubble__tail">
+								<svg class="" width="98" height="21"
+									viewBox="0 0 98 21" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M96.6226 19.6853L41.0836 13.5723L1.36544 0.342889L41.9326 0.534396L96.6226 19.6853Z"
+										fill="white" stroke="black" stroke-width="1" />
+								</svg>
+							</div>
+
+							<div class="bubble__text">
+								<p>
+									Спасибо! Уже готовим <br>
+									для вас подробную <br> информацию о празднике.
+								</p>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+				<div class="popup-body">
+					<div class="popup-body__title">
+						Если у вас <br> есть ещё вопросы — <br> напишите нам сами
+					</div>
+
+					<div class="popup-body__buttons">
+						<include
+							src="@components/custom/elements/social/social.html">
+						</include>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- plain quiz popups -->
+<div data-fls-popup="plain-know" aria-hidden="true"
+	class="popup popup-plain">
+	<div data-fls-popup-wrapper class="popup__wrapper">
+		<div data-fls-popup-body class="popup__body">
+
+			<button data-fls-popup-close type="button" class="popup__close">
+				<svg>
+					<use xlink:href="__spritemap#sprite-close"></use>
+				</svg>
+			</button>
+
+			<div data-fls-popup-content class="popup__content">
+				<!-- Контент -->
+
+				<div class="popup-body">
+					<div class="popup-body__title">
+						Хотите просто узнать <br> стоимость и свободна <br>
+						ли ваша дата, <br>
+						но нет времени <br> на разговоры?
+					</div>
+
+					<div class="popup-body__buttons">
+						<button data-fls-button data-fls-popup-link='plain-date'
+							type="button" class="button button_black">
+							Узнать за 1 минуту
+						</button>
+
+					</div>
+				</div>
+
+				<div class="popup-head">
+
+					<div class="popup-head__people">
+						<img src="@img/bg/popupPeopleTiger1.png" alt="Image">
+					</div>
+
+					<div class="popup-head__bubble">
+						<div data-fls-bubble class="bubble">
+
+							<div class="bubble__text">
+								<p>
+									Просто напишите <br> вашу дату и все!
+								</p>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div data-fls-popup="plain-date" aria-hidden="true"
+	class="popup popup-plain">
+	<div data-fls-popup-wrapper class="popup__wrapper">
+		<div data-fls-popup-body class="popup__body">
+
+			<button data-fls-popup-close type="button" class="popup__close">
+				<svg>
+					<use xlink:href="__spritemap#sprite-close"></use>
+				</svg>
+			</button>
+
+			<div data-fls-popup-content class="popup__content">
+				<!-- Контент -->
+
+				<div class="popup-body">
+					<div class="popup-body__title">
+						Вы знаете точную <br> дату праздника <br> или диапазон?
+					</div>
+
+					<div class="popup-body__buttons">
+						<button data-fls-button data-fls-popup-link='plain-day'
+							type="button" class="button button_black">
+							Знаю точно
+						</button>
+						<button data-fls-button data-fls-popup-link='plain-range'
+							type="button" class="button button_black">
+							Хочу узнать с ... по ...
+						</button>
+
+					</div>
+				</div>
+
+				<div class="popup-head">
+
+					<div class="popup-head__people">
+						<img src="@img/bg/popupPeopleTiger1.png" alt="Image">
+					</div>
+
+					<div class="popup-head__bubble">
+						<div data-fls-bubble class="bubble">
+
+							<div class="bubble__text">
+								<p>
+									Выберите один <br> из вариантов
+								</p>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div data-fls-popup="plain-day" aria-hidden="true"
+	class="popup popup-plain">
+	<div data-fls-popup-wrapper class="popup__wrapper">
+		<div data-fls-popup-body class="popup__body">
+
+			<button data-fls-popup-close type="button" class="popup__close">
+				<svg>
+					<use xlink:href="__spritemap#sprite-close"></use>
+				</svg>
+			</button>
+
+			<div data-fls-popup-content class="popup__content">
+				<!-- Контент -->
+
+				<div class="popup-body">
+					<div class="popup-body__title">
+						Просто выберете, <br> подходящую Вам дату.
+					</div>
+
+					<div class="popup__datepicker">
+						<input data-fls-datepicker='date' autocomplete="off"
+							type="text" placeholder='Выберите дату' class="input"
+							id='plain-date'>
+					</div>
+
+					<div class="popup-body__buttons">
+						<button data-fls-button disabled
+							data-fls-popup-link='plain-messenger' data-value=''
+							data-input-id='plain-interval' type="button"
+							class="button button_black">
+							Узнать
+						</button>
+					</div>
+
+				</div>
+
+				<div class="popup-head">
+
+					<div class="popup-head__people">
+						<img src="@img/bg/popupPeopleTiger1.png" alt="Image">
+					</div>
+
+					<div class="popup-head__bubble">
+						<div data-fls-bubble class="bubble">
+
+							<div class="bubble__text">
+								<p>
+									Отлично! <br> Выберите дату.
+								</p>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div data-fls-popup="plain-range" aria-hidden="true"
+	class="popup popup-plain">
+	<div data-fls-popup-wrapper class="popup__wrapper">
+		<div data-fls-popup-body class="popup__body">
+
+			<button data-fls-popup-close type="button" class="popup__close">
+				<svg>
+					<use xlink:href="__spritemap#sprite-close"></use>
+				</svg>
+			</button>
+
+			<div data-fls-popup-content class="popup__content">
+				<!-- Контент -->
+
+				<div class="popup-body">
+					<div class="popup-body__title">
+						Просто выберете, <br> подходящую начальную и конечную
+						даты.
+					</div>
+
+					<div class="popup__datepicker">
+						<input data-fls-datepicker='range' autocomplete="off"
+							type="text" placeholder='Выберите дату' class="input"
+							id='plain-range'>
+					</div>
+
+					<div class="popup-body__buttons">
+						<button data-fls-button disabled
+							data-fls-popup-link='plain-messenger' data-value=''
+							data-input-id='plain-interval' type="button"
+							class="button button_black">
+							Узнать
+						</button>
+					</div>
+
+				</div>
+
+				<div class="popup-head">
+
+					<div class="popup-head__people">
+						<img src="@img/bg/popupPeopleTiger1.png" alt="Image">
+					</div>
+
+					<div class="popup-head__bubble">
+						<div data-fls-bubble class="bubble">
+
+							<div class="bubble__text">
+								<p>
+									Отлично! <br> Выберите даты.
+								</p>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div data-fls-popup="plain-messenger" aria-hidden="true"
+	class="popup popup-plain">
+	<div data-fls-popup-wrapper class="popup__wrapper">
+		<div data-fls-popup-body class="popup__body">
+
+			<button data-fls-popup-close type="button" class="popup__close">
+				<svg>
+					<use xlink:href="__spritemap#sprite-close"></use>
+				</svg>
+			</button>
+
+			<div data-fls-popup-content class="popup__content">
+				<!-- Контент -->
+
+				<div class="popup-body">
+					<div class="popup-body__title">
+						Принято! <br>
+						Выберите удобный <br> мессенджер
+					</div>
+					<!-- todo write in hidden input this value -->
+					<div class="popup-body__buttons">
+						<button type="button" data-fls-popup-link="plain-form"
+							data-value='WhatsApp' data-input-id='plain-messenger'
+							class="popup-body__button">
+							<span class="button-icon">
+								<img src="@img/social/wup.png" alt="WhatsApp link">
+							</span>
+						</button>
+
+						<button type="button" data-fls-popup-link="plain-form"
+							data-value='Telegram' data-input-id='plain-messenger'
+							class="popup-body__button">
+							<span class="button-icon">
+								<img src="@img/social/tg.png" alt="Telegram link">
+							</span>
+						</button>
+
+						<button type="button" data-fls-popup-link="plain-form"
+							data-value='Max' data-input-id='plain-messenger'
+							class="popup-body__button">
+							<span class="button-icon">
+								<img src="@img/social/max.png" alt="Max link">
+							</span>
+						</button>
+
+					</div>
+				</div>
+				<div class="popup-head">
+
+					<div class="popup-head__people">
+						<img src="@img/bg/popupPeopleTiger1.png" alt="Image">
+					</div>
+
+					<div class="popup-head__bubble">
+						<div data-fls-bubble class="bubble">
+
+							<div class="bubble__text">
+								<p>
+									Выберите один <br> из вариантов
+								</p>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div data-fls-popup="plain-form" aria-hidden="true"
+	class="popup popup-plain">
+	<div data-fls-popup-wrapper class="popup__wrapper">
+		<div data-fls-popup-body class="popup__body">
+
+			<button data-fls-popup-close type="button" class="popup__close">
+				<svg>
+					<use xlink:href="__spritemap#sprite-close"></use>
+				</svg>
+			</button>
+
+			<div data-fls-popup-content class="popup__content">
+				<!-- Контент -->
+
+				<div class="popup-body">
+					<div class="popup-body__title">
+						Принято! <br>
+						Выберите удобный <br> мессенджер
+					</div>
+					<div class="popup-body__form">
+						<form data-fls-form="dev" id='plain-form'
+							data-fls-form-popup="plain-thanks" method="POST"
+							action="#" class='form'>
+
+							<label class='form__label'>
+								<input data-fls-input type="text" id='plain-interval'
+									value='' hidden>
+							</label>
+
+							<label class='form__label'>
+								<input data-fls-input type="text" id='plain-messenger'
+									value='' hidden>
+							</label>
+							<!-- Добавление маски телефона через дата атрибут data-fls-input-mask="+38(999) 999-9999" -->
+							<label class='form__label'>
+								<input data-fls-input autocomplete="off" type="text"
+									placeholder="Телефон" id='plain-phone' value=''
+									class="input">
+							</label>
+							<button type="submit" class="button">Отправить</button>
+						</form>
+					</div>
+				</div>
+
+				<div class="popup-head">
+
+					<div class="popup-head__people">
+						<img src="@img/bg/popupPeopleTiger1.png" alt="Image">
+					</div>
+
+					<div class="popup-head__bubble">
+						<div data-fls-bubble class="bubble">
+
+							<div class="bubble__text">
+								<p>
+									А теперь напишите номер <br>
+									телефона, на который <br>
+									я пришлю результаты <br>
+								</p>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div data-fls-popup="plain-thanks" aria-hidden="true"
+	class="popup popup-plain">
+	<div data-fls-popup-wrapper class="popup__wrapper">
+		<div data-fls-popup-body class="popup__body">
+
+			<button data-fls-popup-close type="button" class="popup__close">
+				<svg>
+					<use xlink:href="__spritemap#sprite-close"></use>
+				</svg>
+			</button>
+
+			<div data-fls-popup-content class="popup__content">
+				<!-- Контент -->
+				<div class="popup-body">
+					<div class="popup-body__title">
+						Если у вас <br> есть ещё вопросы — <br> напишите нам сами
+					</div>
+
+					<div class="popup-body__buttons">
+						<include
+							src="@components/custom/elements/social/social.html">
+						</include>
+
+					</div>
+				</div>
+
+				<div class="popup-head">
+
+					<div class="popup-head__people">
+						<img src="@img/bg/popupPeopleTiger1.png" alt="Image">
+					</div>
+
+					<div class="popup-head__bubble">
+						<div data-fls-bubble class="bubble">
+
+							<div class="bubble__text">
+								<p>
+									Спасибо! Уже готовим <br>
+									для вас подробную <br> информацию о празднике.
+								</p>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

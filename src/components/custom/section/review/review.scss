@@ -1,0 +1,125 @@
+.review {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 50px;
+		width: 100%;
+	}
+
+	&__row {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+
+		@media (width < #{$tablet}px) {
+			flex-direction: column;
+			gap: 24px;
+		}
+	}
+
+	&-person {
+		flex: 1 1 50%;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		width: 50%;
+		cursor: default;
+
+		&__data {
+			display: grid;
+			grid-template-columns: 60px auto;
+			gap: 24px;
+		}
+
+		&__text {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 5px;
+		}
+
+		&__avatar {
+			overflow: hidden;
+			display: flex;
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+		}
+
+		&__name {
+			font-weight: 600;
+
+			@include adaptiveValue('font-size', 24, 18);
+		}
+
+		&__message {
+			font-weight: 600;
+			color: var(--grey, #8d8e8f);
+
+			@include adaptiveValue('font-size', 20, 14);
+		}
+
+		& .bubble {
+			align-self: center;
+			margin-block: 30px;
+			rotate: -5deg;
+
+			&__tail {
+				inset: -5px auto auto 40px;
+				rotate: 90deg;
+				scale: 1 -1;
+			}
+
+			&__text {
+				font-weight: 600;
+
+				&::before {
+					top: -3px;
+					right: auto;
+					left: 79px;
+					width: 12px;
+					rotate: 70deg;
+				}
+
+				&::after {
+					top: -3px;
+					right: auto;
+					left: 75px;
+					width: 10px;
+					rotate: 90deg;
+				}
+
+				@include adaptiveValue('font-size', 30, 16);
+			}
+		}
+
+		@media (width < #{$tablet}px) {
+			width: 100%;
+		}
+	}
+
+	&-slider {
+		flex: 1 1 50%;
+		position: relative;
+		display: flex;
+		width: 50%;
+
+		& .slider-block__prev {
+			@include adaptiveValue('left', -34, -5);
+		}
+
+		& .slider-block__next {
+			@include adaptiveValue('right', -34, -5);
+		}
+
+		@media (width < #{$tablet}px) {
+			width: 100%;
+		}
+	}
+}

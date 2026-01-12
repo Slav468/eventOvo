@@ -1,0 +1,331 @@
+.menu {
+	$gapMenu: 10px;
+
+	display: flex;
+
+	// .menu__icon
+	&__icon {
+	}
+
+	// .menu__body
+	&__body {
+		background-color: var(--white, #ffffff);
+
+		@media (width <= 1250px) {
+			position: fixed;
+			z-index: 4;
+			top: 0;
+			left: -100%;
+			overflow: auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 30px;
+			width: 100%;
+			height: 100svh;
+			padding-inline: 15px;
+			padding-bottom: 30px;
+
+			@include adaptiveValue('padding-top', 120, 90);
+
+			background: url('@img/bg/menuBg.png') center / cover no-repeat;
+			transition: left 0.3s ease;
+
+			&::before {
+				content: '';
+				position: fixed;
+				z-index: 2;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 70px;
+				transition: left 0.3s;
+			}
+
+			[data-fls-menu-open] & {
+				left: 0;
+
+				&::before {
+					left: 0;
+				}
+			}
+		}
+	}
+
+	// .menu__list
+	&__list {
+		display: flex;
+		gap: 10px;
+
+		@media (width < 1250px) {
+			flex-direction: column;
+		}
+	}
+
+	// .menu__item
+	&__item {
+		display: grid;
+		grid-template-rows: 1fr 0;
+		max-width: 218px;
+		text-align: center;
+		transition: grid-template-rows 0.3s;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 0;
+			display: none;
+			width: 100%;
+			height: $gapMenu;
+			background-color: transparent;
+		}
+
+		html:not([data-fls-touch]) & {
+			@media (any-hover: hover), (pointer: fine) {
+				&:hover {
+					.menu-item__wrap {
+						background-color: var(--darkblue, #4f3ccd);
+						border-color: var(--darkblue, #4f3ccd);
+					}
+
+					& .menu__link {
+						color: var(--white, #ffffff);
+					}
+
+					&::before {
+						display: block;
+					}
+
+					& .menu-item {
+						&__list {
+							animation: fade-up 0.3s ease 0s forwards;
+							pointer-events: all;
+						}
+					}
+				}
+			}
+		}
+
+		&.active {
+			background-color: var(--darkblue, #4f3ccd);
+			border-color: var(--darkblue, #4f3ccd);
+
+			& .menu__link {
+				color: var(--white, #ffffff);
+			}
+		}
+
+		&:has(.menu-item__list.active) {
+			grid-template-rows: auto 1fr;
+		}
+
+		@media (width <= 1250px) {
+			width: 100%;
+			max-width: none;
+		}
+	}
+
+	&__control {
+		display: none;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 1;
+		width: 30px;
+
+		& svg {
+			width: 62.5%; /* 15/24 */
+			height: 31.25%; /* 7.5/24 */
+		}
+
+		@media (width <= 1250px) {
+			display: flex;
+			margin-inline: 0 30px;
+		}
+	}
+
+	// .menu__link
+	&__link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		padding-block: 9px;
+		font-size: 15px;
+		font-weight: 600;
+
+		@include adaptiveValue('padding-inline', 30, 20, 0, 1920, 1280);
+
+		@media (width < 1250px) {
+			padding-inline: 30px 0;
+			text-align: center;
+		}
+	}
+
+	&-item {
+		position: relative;
+
+		&__wrap {
+			display: flex;
+			align-items: center;
+			color: var(--black, #1b1c1e);
+			background-color: var(--white, #ffffff);
+			border: 2px solid var(--black, #1b1c1e);
+			border-radius: 70px;
+			transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+
+			@media (width <= 1250px) {
+				display: flex;
+				width: 100%;
+			}
+		}
+
+		&__list {
+			position: absolute;
+			z-index: 2;
+			top: calc(100% + $gapMenu);
+			left: 0;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			gap: 10px;
+			min-width: 240px;
+			padding-block: 20px;
+			padding-inline: 30px;
+			background-color: var(--white, #ffffff);
+			border: 2px solid var(--black, #1b1c1e);
+			border-radius: var(--border30, 30px);
+			opacity: 0;
+			pointer-events: none;
+
+			&.active {
+				padding-block: 20px;
+				padding-inline: 30px;
+				opacity: 1;
+				pointer-events: all;
+				margin-block-start: 10px;
+			}
+
+			@media (width <= 1250px) {
+				position: static;
+				width: 100%;
+				padding: 0;
+			}
+		}
+
+		&__item {
+			font-size: 16px;
+			font-weight: 600;
+			transition: color 0.3s ease 0s;
+
+			html:not([data-fls-touch]) & {
+				@media (any-hover: hover), (pointer: fine) {
+					&:hover {
+						color: var(--darkblue, #4f3ccd);
+					}
+				}
+			}
+		}
+
+		&__link {
+			padding-block: 5px;
+			font-size: 15px;
+			font-weight: 600;
+		}
+	}
+
+	&-mobile {
+		&__inner {
+			display: none;
+			flex-direction: column;
+			align-items: center;
+			gap: 30px;
+
+			@media (width <= 1250px) {
+				display: flex;
+
+				& .phone {
+					width: 90%;
+					max-width: none;
+				}
+
+				& .social {
+					&__item {
+						width: 50px;
+					}
+				}
+			}
+		}
+	}
+
+	@media (width <= 1250px) {
+		order: 3;
+	}
+}
+
+// Burger Icon
+.icon-menu {
+	display: none;
+
+	@media (width <= 1250px) {
+		position: relative;
+		z-index: 5;
+		overflow: hidden;
+		display: flex;
+		aspect-ratio: 1;
+		width: 50px;
+		background-color: var(--darkblue, #4f3ccd);
+		border-radius: 50%;
+
+		span,
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			right: 50%;
+			width: 45%; /* 22.5/50 */
+			height: 2px;
+			background-color: var(--white, #ffffff);
+			transition: all 0.3s ease 0s;
+			translate: 50% 50%;
+		}
+
+		&::before {
+			top: calc(50% + 7px);
+		}
+
+		&::after {
+			bottom: calc(50% + 7px);
+		}
+
+		span {
+			top: calc(50% - 1px);
+		}
+
+		[data-fls-menu-open] & {
+			span {
+				width: 0;
+			}
+
+			&::before,
+			&::after {
+			}
+
+			&::before {
+				top: calc(50% - 1px);
+				transform: rotate(-45deg);
+			}
+
+			&::after {
+				bottom: calc(50% - 1px);
+				transform: rotate(45deg);
+			}
+		}
+
+		@media (any-hover: none) {
+			cursor: default;
+		}
+	}
+}

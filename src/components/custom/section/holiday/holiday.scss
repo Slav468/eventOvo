@@ -1,0 +1,48 @@
+.holiday {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+
+	& .tabs {
+		&__container {
+			position: relative;
+			padding: 0;
+		}
+
+		&__decor {
+			position: absolute;
+			z-index: 0;
+			top: -180px;
+			right: 90px;
+
+			@include adaptiveValue('right', 90, -170);
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 250px;
+			height: 270px;
+			rotate: 15deg;
+
+			@media (width < #{$mobileSmall}px) {
+				display: none;
+			}
+		}
+
+		&__navigation {
+			position: relative;
+			z-index: 1;
+		}
+
+		&__title {
+			&:first-child {
+				margin-inline-start: 10px;
+			}
+
+			&:last-child {
+				margin-inline-end: 10px;
+			}
+		}
+	}
+}
