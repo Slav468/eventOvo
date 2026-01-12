@@ -68,81 +68,46 @@ export const htmlPlugins = [
 		name: 'add-posthtml',
 		apply: 'build',
 		enforce: 'post',
-		// closeBundle: async () => {
-		// 	const htmlFiles = globSync(`dist/*.html`)
-		// 	htmlFiles.forEach(async htmlFile => {
-		// 		let content = fs.readFileSync(htmlFile, 'utf-8')
-		// 		// Шлихи SVG-спрайту
-		// 		if (templateConfig.images.svgsprite && content.includes('__spritemap')) {
-		// 			content = content.replace(new RegExp('__spritemap', 'gi'), `${templateConfig.server.path}assets/img/spritemap.svg`)
-		// 		}
-		// 		// Форматування
-		// 		if (templateConfig.html.beautify.enable) {
-		// 			const render = await new Promise((resolve) => {
-		// 				const output = {}
-		// 				const plugins = [
-		// 					posthtmBeautify({
-		// 						rules: {
-		// 							indent: templateConfig.html.beautify.indent,
-		// 							blankLines: '',
-		// 							sortAttrs: true
-		// 						},
-		// 					})
-		// 				]
-		// 				posthtml(plugins).process(content).catch(error => {
-		// 					output.error = error
-		// 					console.log(error);
-		// 					resolve(output)
-		// 				}).then(result => {
-		// 					output.content = result?.html
-		// 					resolve(output)
-		// 				})
-		// 			})
-		// 			content = render.content
-		// 		}
-
-		// 		// Заміна common.js
-		// 		content = content.replace(/<script\s+type="module"\s+crossorigin=""\s+src="(.\/js\/common\.min\.js\?v=\d+)"><\/script>/, '<link rel="modulepreload" crossorigin href="$1">')
-
-		// 		fs.writeFileSync(htmlFile, content, 'utf-8');
-		// 	})
-		// }
 		closeBundle: async () => {
 			const htmlFiles = globSync(`dist/*.html`);
-
-			for (const htmlFile of htmlFiles) {
-				// Читаем файл асинхронно
-				let content = await fs.promises.readFile(htmlFile, 'utf-8');
-
-				// Шлях до SVG-спрайту
+			htmlFiles.forEach(async (htmlFile) => {
+				let content = fs.readFileSync(htmlFile, 'utf-8');
+				// Шлихи SVG-спрайту
 				if (
 					templateConfig.images.svgsprite &&
 					content.includes('__spritemap')
 				) {
 					content = content.replace(
-						/__spritemap/gi,
+						new RegExp('__spritemap', 'gi'),
 						`${templateConfig.server.path}assets/img/spritemap.svg`
 					);
 				}
-
 				// Форматування
 				if (templateConfig.html.beautify.enable) {
-					const plugins = [
-						posthtmBeautify({
-							rules: {
-								indent: templateConfig.html.beautify.indent,
-								blankLines: '',
-								sortAttrs: true,
-							},
-						}),
-					];
-
-					try {
-						const result = await posthtml(plugins).process(content);
-						content = result.html;
-					} catch (error) {
-						console.log(error);
-					}
+					const render = await new Promise((resolve) => {
+						const output = {};
+						const plugins = [
+							posthtmBeautify({
+								rules: {
+									indent: templateConfig.html.beautify.indent,
+									blankLines: '',
+									sortAttrs: true,
+								},
+							}),
+						];
+						posthtml(plugins)
+							.process(content)
+							.catch((error) => {
+								output.error = error;
+								console.log(error);
+								resolve(output);
+							})
+							.then((result) => {
+								output.content = result?.html;
+								resolve(output);
+							});
+					});
+					content = render.content;
 				}
 
 				// Заміна common.js
@@ -151,9 +116,8 @@ export const htmlPlugins = [
 					'<link rel="modulepreload" crossorigin href="$1">'
 				);
 
-				// Записываем файл асинхронно
-				await fs.promises.writeFile(htmlFile, content, 'utf-8');
-			}
+				fs.writeFileSync(htmlFile, content, 'utf-8');
+			});
 		},
 	},
 ];
