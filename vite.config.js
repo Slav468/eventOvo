@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import { globSync } from 'glob';
 import path from 'path';
 import fs from 'fs';
-import postbuildHtml from './template_modules/postbuild-html.js';
 
 // Налаштування збірки
 import templateConfig from './template.config.js';
@@ -238,7 +237,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 					},
 				},
 			},
-			postbuildHtml(),
+			templateImports.postbuildHtml(),
 			...(isInspect ? [Inspect()] : []),
 			// Робота з GitHub
 			...(isProduction && isGit ? [...templateImports.gitPlugins] : []),

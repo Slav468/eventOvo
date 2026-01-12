@@ -15,7 +15,6 @@ import sortMediaQueries from 'postcss-sort-media-queries';
 import { normalizePath } from 'vite';
 import { globSync } from 'glob';
 import fs from 'fs/promises';
-import path from 'path';
 
 import logger from './logger.js';
 
