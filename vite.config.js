@@ -101,35 +101,23 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 			},
 		},
 		plugins: [
-			// Робота з HTML
 			...templateImports.htmlPlugins,
-			// Робота з скриптами
 			...templateImports.scriptsPlugins,
-			// Робота з зображеннями
 			...templateImports.imagePlugins,
-			// Робота зі шрифтами
 			...templateImports.fontPlugins,
-			// Робота з стилями
 			...templateImports.stylesPlugins,
-			// Робота з PHP
 			...templateImports.phpPlugins,
-			// Обробка React
 			...(templateConfig.js.react ? [templateImports.react()] : []),
-			// Обробка Vue
 			...(templateConfig.js.vue ? [templateImports.vue()] : []),
-			// NovaPoshta
 			...(templateConfig.novaposhta.enable
 				? [templateImports.novaPoshta()]
 				: []),
-			// Генерація сторінки проєкту
 			...(isProduction && templateConfig.projectpage.enable
 				? [templateImports.projectPage()]
 				: []),
-			// Час для кави
 			...(!isProduction && templateConfig.coffee.enable
 				? [templateImports.coffeeTime()]
 				: []),
-			// Копіювання файлів
 			...(isProduction && templateConfig.server.copyfiles
 				? [
 						templateImports.viteStaticCopy({
@@ -143,13 +131,10 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 						}),
 				  ]
 				: []),
-			// Робота з статистикою
 			...templateImports.statPlugins,
-			// Додавання версії файлів
 			...(isProduction && templateConfig.server.version
 				? [
 						{
-							//templateImports.addVersion((new Date()).getTime())
 							name: 'add-version',
 							apply: 'build',
 							transformIndexHtml(html) {
@@ -165,7 +150,6 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 						},
 				  ]
 				: []),
-			// Оновлення браузеру
 			{
 				name: 'custom-hmr',
 				enforce: 'post',
@@ -180,14 +164,12 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 					}
 				},
 			},
-			// Повідомлення
 			{
 				name: 'message-dev',
 				enforce: 'post',
 				configureServer: {
 					order: 'post',
 					handler: (server) => {
-						// Повідомлення навігаційної панелі
 						if (!isWp) {
 							if (templateConfig.navpanel.dev && !isProduction) {
 								logger('_NAVPAN_DONE');
@@ -195,7 +177,6 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 								logger('_NAVPAN_WARN');
 							}
 						}
-						// Додавання QR-коду в термінал
 						if (isHost) {
 							setTimeout(() => {
 								const urls = server.resolvedUrls || server.network;
@@ -225,7 +206,6 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 					},
 				},
 			},
-
 			{
 				name: 'message-build',
 				apply: 'build',
@@ -238,23 +218,19 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 				},
 			},
 			...(isInspect ? [Inspect()] : []),
-			// Робота з GitHub
 			...(isProduction && isGit ? [...templateImports.gitPlugins] : []),
-			// Робота з архівом
 			...(isProduction && isZip ? [...templateImports.zipPlugin] : []),
-			// Робота з FTP
 			...(isProduction && isFtp ? [...templateImports.ftpPlugin] : []),
 		],
 		css: {
 			devSourcemap: true,
 			preprocessorOptions: {
 				scss: {
-					//silenceDeprecations: ["mixed-decls"],
 					silenceDeprecations: [],
 					additionalData: `
-						@use "sass:math";
-						@use "@styles/includes/index.scss" as *;
-					`,
+                        @use "sass:math";
+                        @use "@styles/includes/index.scss" as *;
+                    `,
 					sourceMap: true,
 					quietDeps: true,
 					api: 'modern-compiler',
@@ -272,6 +248,9 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 			cssCodeSplit: templateConfig.styles.codesplit,
 			assetsInlineLimit: 0,
 			rollupOptions: {
+				// 🔥 ТОЧЕЧНО ДОБАВЛЕНО
+				maxParallelFileOps: 4,
+
 				input: isWp
 					? ['src/components/wordpress/fls-theme/assets/app.js']
 					: globSync('./src/*.html', {
@@ -299,7 +278,6 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 								}
 							}
 						},
-						// Налаштування асетів
 						assetFileNames: (asset) => {
 							let getPath =
 								asset.originalFileNames[0] &&
@@ -322,7 +300,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 								} else {
 									extType = getPath;
 								}
-								return `${extType}/[name][extname]`; //-[hash]
+								return `${extType}/[name][extname]`;
 							}
 						},
 						entryFileNames(name) {
